@@ -8,12 +8,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {' '}
+    <BrowserRouter basename="/goit-react-hw-08-phonebook">
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
+        {/* <PersistGate loading={null} persistor={persistor}> */}
+        <App />
       </Provider>
+      {/* </PersistGate> */}
     </BrowserRouter>
   </React.StrictMode>
 );
@@ -21,3 +22,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 //  <PersistGate loading={null} persistor={persistor}>
 //    <App />
 //  </PersistGate>;
+
+//  <BrowserRouter>
+//    <Provider store={store}>
+//      <PersistGate loading={null} persistor={persistor}>
+//        <App />
+//      </PersistGate>
+//    </Provider>
+//  </BrowserRouter>;
