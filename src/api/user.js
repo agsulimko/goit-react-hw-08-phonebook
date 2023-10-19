@@ -1,23 +1,11 @@
-// import axios from 'axios';
-
-// const instance = axios.create({
-//   baseURL: 'https://connections-api.herokuapp.com',
-// });
-
-// export const signUp = async body => {
-//   const { data } = await axios.post('/users/signup', body);
-//   console.log(data);
-
-//   return data;
-// };
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://practices-api.vercel.app',
+  baseURL: 'https://connections-api.herokuapp.com',
 });
 
 export const signUp = async body => {
-  const { data } = await axios.post('/auth/signup', body);
+  const { data } = await axios.post('/users/signup', body);
   console.log(data);
 
   return data;

@@ -4,16 +4,33 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import FormRegister from "components/FormRegister/FormRegister";
 import { signUp } from "api/user";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { registrationThunk } from "redux/users/thunks";
+
+import { useEffect } from "react";
+import { selectUsers } from "redux/selectors";
 // import css from "./Register.module.css";
 const Register = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isUser = useSelector(selectUsers);
   const register = async (body) => {
+    // ???? не працює!!!!!!!
     try {
       const data = await signUp(body);
+      navigate("/");
       console.log("data=", data);
     } catch (error) {
       console.log("error=", error);
     }
+    dispatch(registrationThunk(body));
   };
+
+  useEffect(() => {
+    isUser && navigate("/");
+  }, [isUser, navigate]);
+
   return <FormRegister register={register} />;
 };
 
