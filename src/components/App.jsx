@@ -28,7 +28,7 @@ import { useEffect } from "react";
 
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
-const Contacts = lazy(() => import("../pages/Contacts"));
+const Contacts = lazy(() => import("../pages/Home"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const App = () => {

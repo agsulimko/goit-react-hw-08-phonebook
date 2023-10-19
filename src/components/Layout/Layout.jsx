@@ -5,12 +5,24 @@ import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const StyledLink = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
   color: black;
+  font-weight: 500;
 
   &.active {
-    color: red;
+    color: white;
+    background-color: orangered;
   }
 `;
+// const StyledLink = styled(NavLink)`
+//   color: black;
+
+//   &.active {
+//     color: red;
+//   }
+// `;
 
 const Layout = () => {
   return (

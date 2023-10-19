@@ -9,7 +9,7 @@ const Contact = ({ contact }) => {
   return (
     <li className={css.item}>
       <h3>{contact.name}</h3>
-      <h3>{contact.phone}</h3>
+      <h3>{contact.number}</h3>
 
       <button
         type="button"
