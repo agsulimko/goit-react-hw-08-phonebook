@@ -1,10 +1,8 @@
 import css from "./Layout.module.css";
 import styled from "styled-components";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { loginThunk } from "redux/users/thunks";
 
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -18,13 +16,6 @@ const StyledLink = styled(NavLink)`
     background-color: orangered;
   }
 `;
-// const StyledLink = styled(NavLink)`
-//   color: black;
-
-//   &.active {
-//     color: red;
-//   }
-// `;
 
 const Layout = () => {
   // const dispatch = useDispatch();

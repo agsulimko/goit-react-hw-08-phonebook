@@ -1,7 +1,3 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import FormRegister from "components/FormRegister/FormRegister";
 import { signUp } from "api/user";
 import { useNavigate } from "react-router-dom";

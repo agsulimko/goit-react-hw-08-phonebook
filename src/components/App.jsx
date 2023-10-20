@@ -1,21 +1,21 @@
 import Container from "@mui/material/Container";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import Register from "../pages/Register";
 // import Login from "../pages/Login";
 // import Contacts from "../pages/Contacts";
 import Layout from "./Layout/Layout";
 // import NotFound from "../pages/NotFound";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { Suspense, lazy } from "react";
 // import { useState } from "react";
-import css from "./App.module.css";
+// import css from "./App.module.css";
 // import { nanoid } from "nanoid";
-import ContactForm from "components/ContactForm/ContactForm";
-import ContactList from "./ContactList/ContactList";
-import Filter from "components/Filter/Filter";
-import { useDispatch, useSelector } from "react-redux";
+// import ContactForm from "components/ContactForm/ContactForm";
+// import ContactList from "./ContactList/ContactList";
+// import Filter from "components/Filter/Filter";
+import { useDispatch } from "react-redux";
 import { fetchContacts } from "redux/operations";
-import { selectContacts } from "redux/selectors";
+// import { selectContacts } from "redux/selectors";
 import { useEffect } from "react";
 
 // const StyledLink = styled(NavLink)`
@@ -33,7 +33,7 @@ const NotFound = lazy(() => import("../pages/NotFound"));
 
 const App = () => {
   const dispatch = useDispatch();
-  const { isLoading, error } = useSelector(selectContacts);
+  // const { isLoading, error } = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -56,27 +56,21 @@ const App = () => {
 
 export default App;
 
-{
-  /* <div className="container"> */
-}
-{
-  /* <h1 className={css.h1}>Phonebook</h1> */
-}
-{
-  /* <nav>
+/* <div className="container"> */
+
+/* <h1 className={css.h1}>Phonebook</h1> */
+
+/* <nav>
         <StyledLink to="/" end>
           Home
         </StyledLink>
         <StyledLink to="/register">Registration</StyledLink>
         <StyledLink to="/login">Login</StyledLink>
       </nav> */
-}
 
-{
-  /* <ContactForm />
+/* <ContactForm />
         <h2 className={css.h2}>Contacts</h2>
         <Filter />
         {isLoading && <b>Loading contacts...</b>}
         {error && <b>{error}</b>}
         <ContactList /> */
-}
