@@ -12,13 +12,13 @@ const Register = () => {
   const navigate = useNavigate();
   const isUser = useSelector(selectUsers);
   const register = async (body) => {
-    try {
-      const data = await signUp(body);
-      navigate("/");
-      console.log("data=", data);
-    } catch (error) {
-      console.log("error=", error);
-    }
+    // try {
+    //   const data = await signUp(body);
+    //   navigate("/");
+    //   console.log("data=", data);
+    // } catch (error) {
+    //   console.log("error=", error);
+    // }
     dispatch(registrationThunk(body));
   };
 
