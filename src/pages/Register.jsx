@@ -16,7 +16,6 @@ const Register = () => {
   const navigate = useNavigate();
   const isUser = useSelector(selectUsers);
   const register = async (body) => {
-    // ???? не працює!!!!!!!
     try {
       const data = await signUp(body);
       navigate("/");

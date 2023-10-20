@@ -40,15 +40,6 @@ const App = () => {
   }, [dispatch]);
   return (
     <Container maxWidth="sm">
-      {/* <div className="container"> */}
-      {/* <h1 className={css.h1}>Phonebook</h1> */}
-      {/* <nav>
-        <StyledLink to="/" end>
-          Home
-        </StyledLink>
-        <StyledLink to="/register">Registration</StyledLink>
-        <StyledLink to="/login">Login</StyledLink>
-      </nav> */}
       <Suspense fallback={"Loading....."}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -56,19 +47,36 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
-
-            {/* <ContactForm />
-        <h2 className={css.h2}>Contacts</h2>
-        <Filter />
-        {isLoading && <b>Loading contacts...</b>}
-        {error && <b>{error}</b>}
-        <ContactList /> */}
           </Route>
         </Routes>
       </Suspense>
-      {/* </div> */}
     </Container>
   );
 };
 
 export default App;
+
+{
+  /* <div className="container"> */
+}
+{
+  /* <h1 className={css.h1}>Phonebook</h1> */
+}
+{
+  /* <nav>
+        <StyledLink to="/" end>
+          Home
+        </StyledLink>
+        <StyledLink to="/register">Registration</StyledLink>
+        <StyledLink to="/login">Login</StyledLink>
+      </nav> */
+}
+
+{
+  /* <ContactForm />
+        <h2 className={css.h2}>Contacts</h2>
+        <Filter />
+        {isLoading && <b>Loading contacts...</b>}
+        {error && <b>{error}</b>}
+        <ContactList /> */
+}

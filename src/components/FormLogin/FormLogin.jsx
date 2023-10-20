@@ -1,50 +1,63 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 const FormLogin = ({ login }) => {
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		const { email, password } = e.target.elements
-		login({
-			email: email.value,
-			password: password.value,
-		})
-	}
-	return (
-		<div className='card p-5 mx-auto' style={{ width: 500 }}>
-			<form onSubmit={handleSubmit}>
-				<div className='mb-3'>
-					<label htmlFor='exampleInputEmail1' className='form-label'>
-						Email address
-					</label>
-					<input
-						type='email'
-						name='email'
-						className='form-control'
-						id='exampleInputEmail1'
-						aria-describedby='emailHelp'
-					/>
-					<div id='emailHelp' className='form-text'>
-						We'll never share your email with anyone else.
-					</div>
-				</div>
-				<div className='mb-3'>
-					<label htmlFor='exampleInputPassword1' className='form-label'>
-						Password
-					</label>
-					<input
-						name='password'
-						type='password'
-						className='form-control'
-						id='exampleInputPassword1'
-					/>
-				</div>
-				<button type='submit' className='btn btn-primary'>
-					Login
-				</button>
-			</form>
-			<Link to='/registration'>Registration</Link>
-		</div>
-	)
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = e.target.elements;
+    login({
+      email: email.value,
+      password: password.value,
+    });
+  };
+  return (
+    <div>
+      <main>
+        <h1>LOGIN</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Email address</label>
+            <TextField
+              type="email"
+              name="email"
+              id="outlined-basic-email"
+              label="Outlined"
+              variant="outlined"
+              helperText="Some important text"
+              autoComplete="username"
+            />
+          </div>
 
-export default FormLogin
+          <div>
+            <label>Password</label>
+            <TextField
+              type="password"
+              name="password"
+              id="outlined-basic-password"
+              label="Outlined"
+              variant="outlined"
+              helperText="Some important text"
+              autoComplete="current-password"
+            />
+          </div>
+
+          <div>
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label="Label"
+            />
+            <label>Check me out</label>
+          </div>
+          <Button type="submit" variant="contained">
+            LOGIN
+          </Button>
+        </form>
+      </main>
+      <Link to="/register">REGISTRATION</Link>
+    </div>
+  );
+};
+
+export default FormLogin;
