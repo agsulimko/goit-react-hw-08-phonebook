@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { signUp, logIn, logOut } from '../../api/user';
+import { signUp, logIn } from '../../api/user';
 
 export const registrationThunk = createAsyncThunk(
   'users/registration',
@@ -25,14 +25,14 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
-export const logoutThunk = createAsyncThunk(
-  'users/logout',
-  async (body, { rejectWithValue }) => {
-    try {
-      const data = await logOut(body);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
+// export const logoutThunk = createAsyncThunk(
+//   'users/logout',
+//   async (body, { rejectWithValue }) => {
+//     try {
+//       const data = await logOut(body);
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );

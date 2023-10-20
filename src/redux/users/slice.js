@@ -1,32 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, logoutThunk, registrationThunk } from './thunks';
+import { loginThunk, registrationThunk } from './thunks';
 
 const initialState = {
   token: '',
-  // profile: null,
+  profile: null,
 };
 
 const handleUsersFulfilled = (state, { payload }) => {
   state.token = payload.token;
-  // state.profile = payload.user;
+  state.profile = payload.user;
 };
 
 const usersSlice = createSlice({
   name: 'root',
   initialState,
-  // reducers: {
-  //   logOut: state => {
-  //     state.profile = null;
-  //     state.token = '';
-  //   },
-  // },
+  reducers: {
+    loginOut: state => {
+      state.profile = null;
+      state.token = '';
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(registrationThunk.fulfilled, handleUsersFulfilled)
-      .addCase(loginThunk.fulfilled, handleUsersFulfilled)
-      .addCase(logoutThunk.fulfilled, handleUsersFulfilled);
+      .addCase(loginThunk.fulfilled, handleUsersFulfilled);
+    // .addCase(logoutThunk.fulfilled, handleUsersFulfilled);
   },
 });
 
 export const usersReducer = usersSlice.reducer;
-// export const { logOut } = usersSlice.actions;
+export const { loginOut } = usersSlice.actions;

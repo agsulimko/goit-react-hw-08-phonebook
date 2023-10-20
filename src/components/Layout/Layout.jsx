@@ -2,7 +2,11 @@ import css from "./Layout.module.css";
 import styled from "styled-components";
 // import React, { useEffect } from "react";
 import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { selectUsers } from "redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteToken } from "api/user";
+import { loginOut } from "redux/users/slice";
 
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -18,10 +22,19 @@ const StyledLink = styled(NavLink)`
 `;
 
 const Layout = () => {
-  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isUsers = useSelector(selectUsers);
+  const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(loginThunk);
   // }, [dispatch]);
+
+  const handleClick = () => {
+    if (isUsers) {
+      dispatch(loginOut());
+      deleteToken();
+    } else navigate("/login");
+  };
 
   return (
     <>
@@ -32,11 +45,20 @@ const Layout = () => {
             <StyledLink to="/">HOME</StyledLink>
           </li>
           <li>
-            <StyledLink to="/register">Registration</StyledLink>
+            {isUsers && <StyledLink to="/register">Registration</StyledLink>}
           </li>
 
           <li>
-            <StyledLink to="/login">Login</StyledLink>
+            {!isUsers && <StyledLink to="/register">Welkome!!!!!</StyledLink>}
+          </li>
+
+          <li>
+            <StyledLink to="/login">
+              {/* Login */}
+              <button onClick={handleClick}>
+                {isUsers ? "Login Out" : "Login"}
+              </button>
+            </StyledLink>
           </li>
         </ul>
       </header>

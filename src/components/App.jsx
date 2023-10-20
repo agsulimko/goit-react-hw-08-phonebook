@@ -17,6 +17,8 @@ import { useDispatch } from "react-redux";
 import { fetchContacts } from "redux/operations";
 // import { selectContacts } from "redux/selectors";
 import { useEffect } from "react";
+import PrivateRoute from "guards/PrivateRoute";
+import PublicRoute from "guards/PublicRoute";
 
 // const StyledLink = styled(NavLink)`
 //   color: black;
@@ -43,9 +45,30 @@ const App = () => {
       <Suspense fallback={"Loading....."}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Contacts />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route
+              index
+              element={
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <PublicRoute>
+                  <Register />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-
+import { Link } from "react-router-dom";
 // import { signUp } from "api/user";
 const FormRegister = ({ register }) => {
   const handleSubmit = (event) => {
@@ -23,6 +23,7 @@ const FormRegister = ({ register }) => {
     <div>
       <main>
         <h1>Registration</h1>
+        <Link to="/">Back to home</Link>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="exampleInputName">Name</label>
@@ -77,6 +78,7 @@ const FormRegister = ({ register }) => {
           </Button>
         </form>
       </main>
+      <Link to="/login">Login</Link>
     </div>
   );
 };

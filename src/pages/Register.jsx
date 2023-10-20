@@ -1,5 +1,5 @@
 import FormRegister from "components/FormRegister/FormRegister";
-import { signUp } from "api/user";
+
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registrationThunk } from "redux/users/thunks";

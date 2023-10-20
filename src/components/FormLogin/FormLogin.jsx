@@ -16,6 +16,7 @@ const FormLogin = ({ login }) => {
     <div>
       <main>
         <h1>LOGIN</h1>
+        <Link to="/">Back to home</Link>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Email address</label>
@@ -55,7 +56,7 @@ const FormLogin = ({ login }) => {
           </Button>
         </form>
       </main>
-      <Link to="/register">REGISTRATION</Link>
+      <Link to="/register">Registration</Link>
     </div>
   );
 };
