@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import React, { useEffect } from "react";
 import { Suspense } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { selectUsers } from "redux/selectors";
+import { selectProfile, selectUsers } from "redux/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteToken } from "api/user";
 import { loginOut } from "redux/users/slice";
@@ -24,6 +24,7 @@ const StyledLink = styled(NavLink)`
 const Layout = () => {
   const navigate = useNavigate();
   const isUsers = useSelector(selectUsers);
+  const profile = useSelector(selectProfile);
   const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(loginThunk);
@@ -45,19 +46,21 @@ const Layout = () => {
             <StyledLink to="/">HOME</StyledLink>
           </li>
           <li>
-            {isUsers && <StyledLink to="/register">Registration</StyledLink>}
+            {/* <StyledLink to="/register">Registration</StyledLink> */}
+            {!isUsers && <StyledLink to="/register">Registration</StyledLink>}
           </li>
 
           <li>
-            {!isUsers && <StyledLink to="/register">Welkome!!!!!</StyledLink>}
+            {isUsers && (
+              <p>
+                Welkome - {profile.name}!, {profile.email}
+              </p>
+            )}
           </li>
 
           <li>
-            <StyledLink to="/login">
-              {/* Login */}
-              <button onClick={handleClick}>
-                {isUsers ? "Login Out" : "Login"}
-              </button>
+            <StyledLink to="/login" onClick={handleClick}>
+              {isUsers ? "Login Out" : "Login"} {/* Login */}
             </StyledLink>
           </li>
         </ul>
@@ -72,3 +75,10 @@ const Layout = () => {
   );
 };
 export default Layout;
+
+//  <StyledLink to="/login">
+//               {/* Login */}
+//               <button onClick={handleClick}>
+//                 {isUsers ? "Login Out" : "Login"}
+//               </button>
+//             </StyledLink>

@@ -19,6 +19,7 @@ import { fetchContacts } from "redux/operations";
 import { useEffect } from "react";
 import PrivateRoute from "guards/PrivateRoute";
 import PublicRoute from "guards/PublicRoute";
+import { Toaster } from "react-hot-toast";
 
 // const StyledLink = styled(NavLink)`
 //   color: black;
@@ -42,6 +43,7 @@ const App = () => {
   }, [dispatch]);
   return (
     <Container maxWidth="sm">
+      <Toaster />
       <Suspense fallback={"Loading....."}>
         <Routes>
           <Route path="/" element={<Layout />}>
