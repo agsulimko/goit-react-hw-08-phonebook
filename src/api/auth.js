@@ -26,9 +26,25 @@ export const logIn = async body => {
   return data;
 };
 
+export const refresh = async () => {
+  const token = JSON.parse(localStorage.getItem('persist:auth'));
+
+  setToken(JSON.parse(token?.token));
+  const { data } = await instance('/users/current');
+  setToken(data.token);
+  return data;
+};
+
+// export const logIn = async body => {
+//   const { data } = await instance('/contacts', body);
+//   setToken(data.token);
+//   console.log(data);
+//   return data;
+// };
+
 // export const logOut = async body => {
 //   const { data } = await instance.post('/users/logout', body);
-//   // setToken('data.token');
+//   setToken(data.token);
 //   console.log(data);
 //   return data;
 // };

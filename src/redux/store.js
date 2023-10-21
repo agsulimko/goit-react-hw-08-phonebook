@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { contactsReducer } from './contactsSlice';
 import { filterReducer } from './filterSlice';
-import { usersReducer } from './users/slice';
+import { authReducer } from './auth/slice';
 import persistReducer from 'redux-persist/es/persistReducer';
 import {
   persistStore,
@@ -15,17 +15,17 @@ import {
 } from 'redux-persist';
 
 const persistConfig = {
-  key: 'users',
+  key: 'auth',
   storage,
-  // whitelist: ['users'],
+  whitelist: ['auth'],
   // whitelist: ['token'],
-  blacklist: ['filter'],
+  // blacklist: ['filter'],
 };
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
-  users: usersReducer,
+  auth: authReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

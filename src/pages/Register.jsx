@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 // import { selectUsers } from "redux/selectors";
-import { registrationThunk } from "redux/users/thunks";
+import { registrationThunk } from "redux/auth/thunks";
 
 // import css from "./Register.module.css";
 const Register = () => {
@@ -21,30 +21,6 @@ const Register = () => {
       });
     }
   };
-  // const dispatch = useDispatch();
-  // // const navigate = useNavigate();
-  // // const isUser = useSelector(selectUsers);
-
-  // const register = (body) => {
-  //   // try {
-  //   //   const data = await signUp(body);
-  //   //   navigate("/");
-  //   //   console.log("data=", data);
-  //   // } catch (error) {
-  //   //   console.log("error=", error);
-  //   // }
-  //   dispatch(registrationThunk(body))
-  //     .unwrap()
-  //     .then(() =>
-  //       toast.success("Welcome", { duration: 3000, position: "top-right" })
-  //     )
-  //     .catch((error) =>
-  //       toast.error(error.error, { duration: 3000, position: "top-right" })
-  //     );
-
-  // useEffect(() => {
-  //   isUser && navigate("/");
-  // }, [isUser, navigate]);
 
   return <FormRegister register={register} />;
 };

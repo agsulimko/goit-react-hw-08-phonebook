@@ -1,12 +1,14 @@
 import css from "./Layout.module.css";
 import styled from "styled-components";
 // import React, { useEffect } from "react";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { selectProfile, selectUsers } from "redux/selectors";
+import { selectAuth, selectUser } from "redux/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteToken } from "api/user";
-import { loginOut } from "redux/users/slice";
+import { deleteToken, logOut } from "api/auth";
+
+import { refreshThunk } from "redux/auth/thunks";
+import { loginOut } from "redux/auth/slice";
 
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -23,15 +25,15 @@ const StyledLink = styled(NavLink)`
 
 const Layout = () => {
   const navigate = useNavigate();
-  const isUsers = useSelector(selectUsers);
-  const profile = useSelector(selectProfile);
+  const isAuth = useSelector(selectAuth);
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(loginThunk);
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
 
   const handleClick = () => {
-    if (isUsers) {
+    if (isAuth) {
       dispatch(loginOut());
       deleteToken();
     } else navigate("/login");
@@ -43,24 +45,26 @@ const Layout = () => {
         {/* <h1 className={css.h1}>Phonebook</h1> */}
         <ul className={css.listLayout}>
           <li>
-            <StyledLink to="/">HOME</StyledLink>
+            <StyledLink to="/">Home</StyledLink>
           </li>
+          <li>{isAuth && <StyledLink to="/contacts">Contacts</StyledLink>}</li>
+
           <li>
             {/* <StyledLink to="/register">Registration</StyledLink> */}
-            {!isUsers && <StyledLink to="/register">Registration</StyledLink>}
+            {!isAuth && <StyledLink to="/register">Registration</StyledLink>}
           </li>
 
           <li>
-            {isUsers && (
+            {isAuth && (
               <p>
-                Welkome - {profile.name}!, {profile.email}
+                Welkome - {user.name}!, {user.email}
               </p>
             )}
           </li>
 
           <li>
             <StyledLink to="/login" onClick={handleClick}>
-              {isUsers ? "Login Out" : "Login"} {/* Login */}
+              {isAuth ? "Login Out" : "Login"} {/* Login */}
             </StyledLink>
           </li>
         </ul>
@@ -75,10 +79,3 @@ const Layout = () => {
   );
 };
 export default Layout;
-
-//  <StyledLink to="/login">
-//               {/* Login */}
-//               <button onClick={handleClick}>
-//                 {isUsers ? "Login Out" : "Login"}
-//               </button>
-//             </StyledLink>

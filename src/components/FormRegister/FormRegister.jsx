@@ -28,7 +28,7 @@ const FormRegister = ({ register }) => {
           <div>
             <label htmlFor="exampleInputName">Name</label>
             <TextField
-              type="name"
+              type="text"
               name="name"
               id="exampleInputName"
               label="Outlined"

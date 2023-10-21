@@ -1,4 +1,5 @@
 import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import { Routes, Route } from "react-router-dom";
 // import Register from "../pages/Register";
 // import Login from "../pages/Login";
@@ -28,10 +29,11 @@ import { Toaster } from "react-hot-toast";
 //     color: orange;
 //   }
 // `;
-
+// contacts;
+const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
-const Contacts = lazy(() => import("../pages/Home"));
+const Contacts = lazy(() => import("../pages/Contacts"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const App = () => {
@@ -40,41 +42,53 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
+    // dispatch(refreshUser());
+    // !!!!eslit-disable-next-line react-hooks/exha
   }, [dispatch]);
   return (
-    <Container maxWidth="sm">
-      <Toaster />
-      <Suspense fallback={"Loading....."}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <PrivateRoute>
-                  <Contacts />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <PublicRoute>
-                  <Register />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <PublicRoute>
-                  <Login />
-                </PublicRoute>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Suspense>
+    <Container>
+      <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
+        <Toaster />
+        <Suspense fallback={"Loading....."}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              {/* <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute redirectTo="/login" component={<Contacts />} />
+                }
+              /> */}
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute>
+                    <Contacts />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route
+                path="/register"
+                element={
+                  <PublicRoute>
+                    <Register />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Box>
     </Container>
   );
 };
