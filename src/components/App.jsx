@@ -29,7 +29,7 @@ const App = () => {
     dispatch(fetchContacts());
     dispatch(refreshThunk());
     // eslit-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatchispatch]);
+  }, [dispatch]);
 
   return (
     <Container>
