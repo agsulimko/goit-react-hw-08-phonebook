@@ -29,17 +29,52 @@ export const loginThunk = createAsyncThunk(
 
 export const refreshThunk = createAsyncThunk(
   'auth/refresh',
-  async (_, { rejectWithValue }) => {
+  async (_, thunkAPI) => {
+    // Reading the token from the state via getState()
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      // If there is no token, exit without performing any request
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+
     try {
-      const data = await refresh();
-      setToken(data.token);
-      return data;
+      // If there is a token, add it to the HTTP header and perform the request
+      setToken(persistedToken);
+      const response = await refresh();
+      return response.data;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
+export const logoutThunk = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      const data = await logOut();
+      setToken(data.token);
+      // After a successful logout, remove the token from the HTTP header
+      // clearAuthHeader();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// export const delContact = createAsyncThunk(
+//   'contacts/deleteContact',
+//   async (contactId, thunkAPI) => {
+//     try {
+//       const response = await axios.delete(`/contacts/${contactId}`);
+//       return response.data;
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e.message);
+//     }
+//   }
+// );
 // export const logoutThunk = createAsyncThunk(
 //   'users/logout',
 //   async (body, { rejectWithValue }) => {

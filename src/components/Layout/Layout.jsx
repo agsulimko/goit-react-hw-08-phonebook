@@ -5,7 +5,7 @@ import { Suspense, useEffect } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { selectAuth, selectUser } from "redux/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteToken, logOut } from "api/auth";
+import { deleteToken } from "api/auth";
 
 import { refreshThunk } from "redux/auth/thunks";
 import { loginOut } from "redux/auth/slice";
@@ -19,7 +19,7 @@ const StyledLink = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: orangered;
+    background-color: rgb(103, 103, 238);
   }
 `;
 
@@ -56,15 +56,16 @@ const Layout = () => {
 
           <li>
             {isAuth && (
-              <p>
-                Welkome - {user.name}!, {user.email}
+              <p className={css.textLayout}>
+                <span className={css.spanWelcome}>Welkome - {user.name}! </span>{" "}
+                {user.email}
               </p>
             )}
           </li>
 
           <li>
             <StyledLink to="/login" onClick={handleClick}>
-              {isAuth ? "Login Out" : "Login"} {/* Login */}
+              {isAuth ? "Login Out" : "Login"}
             </StyledLink>
           </li>
         </ul>

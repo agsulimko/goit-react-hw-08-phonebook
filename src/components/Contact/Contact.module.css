@@ -3,8 +3,28 @@
     gap:20px;
     align-items: center;
     list-style-type: circle;
+    justify-content: space-between
 }
 .btnClose{
     
-    height: 25px;
+     /* margin: auto;
+    padding: 5px 5px; */
+    border-radius: 5px;
+    border: 0.5px solid rgb(144, 144, 226);
+    background-color: rgb(144, 144, 226);
+/* height: 25px; */
+}
+
+
+
+.btnClose:focus {
+    background-color: rgb(103, 103, 238);
+}
+
+.name {
+    display: flex;
+    gap: 20px;
+    width: 400px;
+
+
 }

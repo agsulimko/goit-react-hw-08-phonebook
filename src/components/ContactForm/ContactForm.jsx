@@ -1,6 +1,6 @@
 import { useState } from "react";
 import css from "./ContactForm.module.css";
-
+import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectContacts } from "redux/selectors";
@@ -14,7 +14,7 @@ const ContactForm = () => {
 
   const { contacts } = useSelector(selectContacts);
   const handleInputChange = ({ target: { value, name } }) => {
-    if (name === "name") setName(value.trim());
+    if (name === "name") setName(value);
     if (name === "number") setNumber(value.trim());
   };
 
@@ -24,7 +24,7 @@ const ContactForm = () => {
     const existingContact = contacts.find(
       (contact) => contact.name === dataForm.name
     );
-    if (existingContact) {
+    if (existingContact === "") {
       return alert(`${dataForm.name} is already in contacts`);
     }
     dispatch(addContacts(dataForm));
@@ -36,7 +36,6 @@ const ContactForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.label}>
-        {" "}
         Name
         <input
           type="text"
@@ -64,9 +63,13 @@ const ContactForm = () => {
           className={css.input}
         />
       </label>
-      <button className={css.btnAdd} type="submit">
+      <Button
+        className={css.btnAdd}
+        type="submit"
+        sx={{ m: 1, width: "300px" }}
+      >
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };

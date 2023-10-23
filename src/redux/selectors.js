@@ -4,16 +4,4 @@ export const selectFilter = state => state.filter;
 
 export const selectAuth = state => state.auth.token;
 export const selectUser = state => state.auth.user;
-
-// export const getIsLoading = state => state.contacts.isLoading;
-// export const getError = state => state.contacts.error;
-
-// export const selectFilteredContacts = createSelector(
-//   [selectContacts, selectFilter],
-//   (contacts, filter) => {
-//     const normalizedValue = filter.toLowerCase().trim();
-//     return contacts.filter(contact =>
-//       contact.name.toLowerCase().includes(normalizedValue)
-//     );
-//   }
-// );
+export const selectProfile = state => state.auth.user;

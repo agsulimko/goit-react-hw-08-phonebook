@@ -1,21 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  loginThunk,
-  logoutThunk,
-  refreshThunk,
-  registrationThunk,
-} from './thunks';
+import { loginThunk, refreshThunk, registrationThunk } from './thunks';
+import { deleteContacts } from 'redux/operations';
 
 const initialState = {
   token: '',
-  // profile: null,
   user: null,
+  // isRefreshing: false,
+  // isLoggedIn: false,
+  // profile: null,
 };
 
 const handleAuthFulfilled = (state, { payload }) => {
   state.token = payload.token;
   // state.profile = payload.user;
   state.user = payload.user;
+  // state.isLoggedI = true;
+};
+const handleFulfilledDelete = (state, { payload }) => {
+  state.items = state.items.filter(({ id }) => id !== payload);
 };
 
 const authSlice = createSlice({
@@ -33,7 +35,10 @@ const authSlice = createSlice({
       .addCase(registrationThunk.fulfilled, handleAuthFulfilled)
       .addCase(loginThunk.fulfilled, handleAuthFulfilled)
       // .addCase(logoutThunk.fulfilled, handleAuthFulfilled)
-      .addCase(refreshThunk.fulfilled, handleAuthFulfilled);
+      .addCase(refreshThunk.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+      })
+      .addCase(deleteContacts.fulfilled, handleFulfilledDelete);
   },
 });
 

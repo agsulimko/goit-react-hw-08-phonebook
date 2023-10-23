@@ -1,3 +1,7 @@
+ul{
+    list-style-type: none;
+    padding-bottom: 20px;
+}
 .listLayout{
         /* display: flex;
             flex-direction: row;
@@ -9,7 +13,7 @@ display: flex;
     align-items: center;
     margin-bottom: 16px;
     border-bottom: 1px solid #2a363b;
-        padding-bottom: 20px;
+   
 }
 .h1 {
     margin: 40px auto;
@@ -17,4 +21,12 @@ display: flex;
 
     text-align: center;
 
+}
+.textLayout{
+    margin: 0;
+}
+.spanWelcome{
+    font-weight: 500px;
+            font-size: 18px;
+            text-align: 'center';
 }

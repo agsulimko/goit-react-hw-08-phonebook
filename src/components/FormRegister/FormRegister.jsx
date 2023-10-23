@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
+import css from "./FormRegister.module.css";
 // import { signUp } from "api/user";
 const FormRegister = ({ register }) => {
   const handleSubmit = (event) => {
@@ -21,19 +22,20 @@ const FormRegister = ({ register }) => {
   };
   return (
     <div>
-      <main>
+      <main className={css.registrMain}>
         <h1>Registration</h1>
         <Link to="/">Back to home</Link>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="exampleInputName">Name</label>
+            {/* <label htmlFor="exampleInputName">Name</label> */}
             <TextField
               type="text"
               name="name"
               id="exampleInputName"
-              label="Outlined"
+              label="Name"
               variant="outlined"
               helperText="Some important text"
+              sx={{ m: 1, width: "350px" }}
             />
             {/* <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
@@ -41,28 +43,30 @@ const FormRegister = ({ register }) => {
           </div>
 
           <div>
-            <label htmlFor="exampleInputEmail">Email address</label>
+            {/* <label htmlFor="exampleInputEmail">Email address</label> */}
             <TextField
               type="email"
               name="email"
               id="exampleInputEmail"
-              label="Outlined"
+              label="Email"
               variant="outlined"
               helperText="Some important text"
               autoComplete="username"
+              sx={{ m: 1, width: "350px" }}
             />
           </div>
 
           <div>
-            <label htmlFor="exampleInputPassword">Password</label>
+            {/* <label htmlFor="exampleInputPassword">Password</label> */}
             <TextField
               type="password"
               name="password"
               id="exampleInputPassword"
-              label="Outlined"
+              label="Password"
               variant="outlined"
               helperText="Some important text"
               autoComplete="current-password"
+              sx={{ m: 1, width: "350px" }}
             />
           </div>
 
@@ -73,12 +77,16 @@ const FormRegister = ({ register }) => {
             />
             <label>Check me out</label>
           </div>
-          <Button type="submit" variant="contained">
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{ m: 1, width: "350px" }}
+          >
             Registration
           </Button>
         </form>
+        <Link to="/login">Login</Link>
       </main>
-      <Link to="/login">Login</Link>
     </div>
   );
 };

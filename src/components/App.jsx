@@ -1,35 +1,20 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Routes, Route } from "react-router-dom";
-// import Register from "../pages/Register";
-// import Login from "../pages/Login";
-// import Contacts from "../pages/Contacts";
+
 import Layout from "./Layout/Layout";
-// import NotFound from "../pages/NotFound";
-// import styled from "styled-components";
+
 import { Suspense, lazy } from "react";
-// import { useState } from "react";
-// import css from "./App.module.css";
-// import { nanoid } from "nanoid";
-// import ContactForm from "components/ContactForm/ContactForm";
-// import ContactList from "./ContactList/ContactList";
-// import Filter from "components/Filter/Filter";
+
 import { useDispatch } from "react-redux";
 import { fetchContacts } from "redux/operations";
-// import { selectContacts } from "redux/selectors";
+
 import { useEffect } from "react";
 import PrivateRoute from "guards/PrivateRoute";
 import PublicRoute from "guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
+import { refreshThunk } from "redux/auth/thunks";
 
-// const StyledLink = styled(NavLink)`
-//   color: black;
-
-//   &.active {
-//     color: orange;
-//   }
-// `;
-// contacts;
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
@@ -42,12 +27,13 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-    // dispatch(refreshUser());
-    // !!!!eslit-disable-next-line react-hooks/exha
-  }, [dispatch]);
+    dispatch(refreshThunk());
+    // eslit-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Container>
-      <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
+      <Box sx={{ bgcolor: "#cfe8fc", height: "600vh", paddingTop: "4px" }}>
         <Toaster />
         <Suspense fallback={"Loading....."}>
           <Routes>
