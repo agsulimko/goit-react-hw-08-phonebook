@@ -16,9 +16,9 @@ const handleAuthFulfilled = (state, { payload }) => {
   state.user = payload.user;
   // state.isLoggedI = true;
 };
-const handleFulfilledDelete = (state, { payload }) => {
-  state.items = state.items.filter(({ id }) => id !== payload);
-};
+// const handleFulfilledDelete = (state, { payload }) => {
+//   state.items = state.items.filter(({ id }) => id !== payload);
+// };
 
 const authSlice = createSlice({
   name: 'auth',
@@ -36,9 +36,9 @@ const authSlice = createSlice({
       .addCase(loginThunk.fulfilled, handleAuthFulfilled)
       // .addCase(logoutThunk.fulfilled, handleAuthFulfilled)
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
-      })
-      .addCase(deleteContacts.fulfilled, handleFulfilledDelete);
+        state.user = payload;
+      });
+    // .addCase(deleteContacts.fulfilled, handleFulfilledDelete);
   },
 });
 

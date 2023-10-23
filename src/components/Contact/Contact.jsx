@@ -12,9 +12,9 @@ const Contact = ({ contact }) => {
   //  console.log(contact.id);
   return (
     <li className={css.item}>
-      <div className={css.name}>
-        <h3>{contact.name}</h3>
-        <h3>{contact.number}</h3>
+      <div className={css.nameNumber}>
+        <h3 className={css.name}>{contact.name}</h3>
+        <h3 className={css.number}>{contact.number}</h3>
       </div>
 
       <Button

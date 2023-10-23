@@ -21,10 +21,20 @@
     background-color: rgb(103, 103, 238);
 }
 
-.name {
+.nameNumber {
     display: flex;
     gap: 20px;
     width: 400px;
+   background-color: beige;
+   
+margin: 0 auto
 
-
+}
+.name{
+     
+    margin: 0 auto;
+}
+.number{
+    background-color: beige;
+margin: 0 auto;
 }

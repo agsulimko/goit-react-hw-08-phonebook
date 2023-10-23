@@ -26,7 +26,9 @@ const StyledLink = styled(NavLink)`
 const Layout = () => {
   const navigate = useNavigate();
   const isAuth = useSelector(selectAuth);
+
   const user = useSelector(selectUser);
+  // console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());
@@ -57,8 +59,8 @@ const Layout = () => {
           <li>
             {isAuth && (
               <p className={css.textLayout}>
-                <span className={css.spanWelcome}>Welkome - {user.name}! </span>{" "}
-                {user.email}
+                {/* <span className={css.spanWelcome}>Welkome - {user.name}! </span>*/}
+                {/* {user.email} */}
               </p>
             )}
           </li>

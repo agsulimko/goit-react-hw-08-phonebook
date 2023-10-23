@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 import { fetchContacts } from "redux/operations";
 
 import { useEffect } from "react";
-import PrivateRoute from "guards/PrivateRoute";
-import PublicRoute from "guards/PublicRoute";
+import PrivateRoute from "../guards/PrivateRoute";
+import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
 import { refreshThunk } from "redux/auth/thunks";
 
