@@ -3,12 +3,12 @@ import styled from "styled-components";
 // import React, { useEffect } from "react";
 import { Suspense, useEffect } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { selectAuth, selectUser } from "redux/selectors";
+import { selectAuth, selectUser } from "../../redux/auth/auchSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteToken } from "api/auth";
 
-import { refreshThunk } from "redux/auth/thunks";
-import { loginOut } from "redux/auth/slice";
+import { refreshThunk } from "redux/auth/auchOperations";
+import { loginOut } from "redux/auth/auchSlice";
 
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -28,10 +28,13 @@ const Layout = () => {
   const isAuth = useSelector(selectAuth);
 
   const user = useSelector(selectUser);
-  // console.log(user);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());
+    // if (user) {
+    //   console.log(user);
+    // } else console.log("00000");
   }, [dispatch]);
 
   const handleClick = () => {
@@ -56,19 +59,24 @@ const Layout = () => {
             {!isAuth && <StyledLink to="/register">Registration</StyledLink>}
           </li>
 
-          <li>
-            {isAuth && (
-              <p className={css.textLayout}>
-                {/* <span className={css.spanWelcome}>Welkome - {user.name}! </span>*/}
-                {/* {user.email} */}
-              </p>
+          <li className={css.itemWelKome}>
+            {isAuth && user && (
+              <p className={css.spanWelcome}>Welkome - {user.name}!</p>
             )}
+            <p className={css.textLayout}> {user.email}</p>
           </li>
 
           <li>
-            <StyledLink to="/login" onClick={handleClick}>
-              {isAuth ? "Login Out" : "Login"}
-            </StyledLink>
+            <div className={css.divLogout}>
+              {isAuth && <div className={css.circle}> </div>}
+              <StyledLink
+                to="/login"
+                onClick={handleClick}
+                className={css.logout}
+              >
+                {isAuth ? "Login Out" : "Login"}
+              </StyledLink>
+            </div>
           </li>
         </ul>
       </header>

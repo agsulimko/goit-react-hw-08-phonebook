@@ -1,8 +1,14 @@
 import css from "./Home.module.css";
 const Contacts = () => {
   return (
-    <main>
-      <h1 className={css.h1}>Phonebook</h1>
+    <main className={css.mainHome}>
+      <div className={css.url}></div>
+      <h1 className={css.h1}>Welcome to Phonebook!</h1>
+      <h2 className={css.h2}>
+        PhoneBook app is an easy to use contact manager app that gives you
+        facility of saving and viewing your contacts, so that you never lose
+        your contacts. Try it today!
+      </h2>
 
       {/* <ContactForm />
       <h2 className={css.h2}>Contacts</h2>

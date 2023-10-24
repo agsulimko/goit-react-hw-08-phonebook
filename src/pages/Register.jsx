@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 // import { selectUsers } from "redux/selectors";
-import { registrationThunk } from "redux/auth/thunks";
+import { registrationThunk } from "redux/auth/auchOperations";
 
 // import css from "./Register.module.css";
 const Register = () => {

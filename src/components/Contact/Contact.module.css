@@ -24,17 +24,16 @@
 .nameNumber {
     display: flex;
     gap: 20px;
-    width: 400px;
-   background-color: beige;
+    width: 800px;
+    
+margin: 0 auto;
    
-margin: 0 auto
-
 }
-.name{
+/* .name{
      
     margin: 0 auto;
 }
 .number{
-    background-color: beige;
+    
 margin: 0 auto;
-}
+} */

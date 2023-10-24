@@ -7,13 +7,13 @@ import Layout from "./Layout/Layout";
 import { Suspense, lazy } from "react";
 
 import { useDispatch } from "react-redux";
-import { fetchContacts } from "redux/operations";
+import { fetchContacts } from "redux/contacts/operations";
 
 import { useEffect } from "react";
 import PrivateRoute from "../guards/PrivateRoute";
 import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
-import { refreshThunk } from "redux/auth/thunks";
+import { refreshThunk } from "redux/auth/auchOperations";
 
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import css from "./Contact.module.css";
 
 import Button from "@mui/material/Button";
-import { deleteContacts } from "redux/operations";
+import { deleteContacts } from "redux/contacts/operations";
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Contact = ({ contact }) => {
         className={css.btnClose}
         aria-label="Close"
         onClick={handleDelete}
-        sx={{ m: 1, width: "50px" }}
+        sx={{ m: 1, width: "110px" }}
       >
         Delete
       </Button>

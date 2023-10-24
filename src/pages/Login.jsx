@@ -6,7 +6,7 @@
 // import css from "./Login.module.css";
 import { useDispatch } from "react-redux";
 // import { selectUsers } from "redux/selectors";
-import { loginThunk } from "redux/auth/thunks";
+import { loginThunk } from "redux/auth/auchOperations";
 // import { useEffect } from "react";
 import FormLogin from "../components/FormLogin/FormLogin";
 import toast from "react-hot-toast";

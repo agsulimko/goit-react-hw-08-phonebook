@@ -36,31 +36,10 @@ export const refresh = async body => {
 export const logOut = async body => {
   const { data } = await instance.post('/users/logout', body);
   deleteToken();
-  // setToken(data.token);
-  console.log(data);
-  return data;
-};
-export const getContacts = async body => {
-  const { data } = await instance('/contacts', body);
-
-  // console.log(data);
-  return data;
-};
-
-export const postContacts = async body => {
-  const { data } = await instance.post('/contacts', body);
 
   console.log(data);
   return data;
 };
-
-// export const deleteContact = async contactId => {
-//   const { data } = await instance.delete(`/contacts/${contactId}`);
-
-//   setToken(data.token);
-//   console.log(data);
-//   return data;
-// };
 
 // export const logOut = async body => {
 //   const { data } = await instance.post('/users/logout', body);

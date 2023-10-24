@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, refreshThunk, registrationThunk } from './thunks';
-import { deleteContacts } from 'redux/operations';
+import { loginThunk, refreshThunk, registrationThunk } from './auchOperations';
 
 const initialState = {
   token: '',
   user: null,
-  // isRefreshing: false,
-  // isLoggedIn: false,
+
   // profile: null,
 };
 
@@ -14,11 +12,7 @@ const handleAuthFulfilled = (state, { payload }) => {
   state.token = payload.token;
   // state.profile = payload.user;
   state.user = payload.user;
-  // state.isLoggedI = true;
 };
-// const handleFulfilledDelete = (state, { payload }) => {
-//   state.items = state.items.filter(({ id }) => id !== payload);
-// };
 
 const authSlice = createSlice({
   name: 'auth',
@@ -26,7 +20,7 @@ const authSlice = createSlice({
   reducers: {
     loginOut: state => {
       state.token = '';
-      state.user = null;
+      // state.user = null;
       // state.profile = null;
     },
   },
@@ -38,7 +32,6 @@ const authSlice = createSlice({
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user = payload;
       });
-    // .addCase(deleteContacts.fulfilled, handleFulfilledDelete);
   },
 });
 

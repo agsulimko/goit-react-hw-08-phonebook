@@ -1,5 +1,18 @@
 .h1 {
-    margin: 40px auto;
-    margin-bottom: 40px;
+margin: 40px auto;
+margin-bottom: 40px;
+text-align: center;
+color: blueviolet;
 
-    text-align: center;}
+}
+
+.h2{
+    text-align: center;
+        padding-left: 200px;
+            padding-right: 200px;
+}
+    
+/* .url{
+    
+    background-image:  url("https: //www.vodafone.ua/shop/media/wysiwyg/novosti/0.jpg");
+}  */
