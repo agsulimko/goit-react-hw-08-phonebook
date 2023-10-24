@@ -26,18 +26,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// const handleSubmit = (event) => {
-//   event.preventDefault();
-//   const { name, email, password } = event.target.elements;
-//   // console.log("name, email, password", {
-//   //   name: name.value,
-//   //   email: email.value,
-//   //   password: password.value,
-//   // });
-//   register({
-//     name: name.value,
-//     email: email.value,
-//     password: password.value,
-//   });
-// };

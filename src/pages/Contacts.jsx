@@ -2,8 +2,7 @@ import ContactForm from "components/FormContact/ContactForm";
 import ContactList from "components/ContactList/ContactList";
 import Filter from "components/Filter/Filter";
 import css from "./Contacts.module.css";
-// import { useEffect } from "react";
-// import { useDispatch } from "react-redux";
+
 const Contacts = () => {
   return (
     <main>

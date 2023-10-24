@@ -9,13 +9,6 @@ const Contacts = () => {
         facility of saving and viewing your contacts, so that you never lose
         your contacts. Try it today!
       </h2>
-
-      {/* <ContactForm />
-      <h2 className={css.h2}>Contacts</h2>
-      <Filter />
-      {/* {isLoading && <b>Loading contacts...</b>}
-      {error && <b>{error}</b>} 
-      <ContactList /> */}
     </main>
   );
 };
