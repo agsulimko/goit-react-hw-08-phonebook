@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/19.86e6a6b5.chunk.css","mappings":"AAAA,6BACI,iBACJ,CAEC,0BACG,oBACJ","sources":["components/FormLogin/FormLogin.module.css"],"sourcesContent":[".loginMain{\n    text-align: center;\n}\n\n .linkNav{\n    text-decoration: none\n} "],"names":[],"sourceRoot":""}
