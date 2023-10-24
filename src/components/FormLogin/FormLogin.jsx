@@ -59,11 +59,8 @@ const FormLogin = ({ login }) => {
           </div>
 
           <div>
-            <FormControlLabel
-              control={<Checkbox defaultChecked />}
-              label="Remember me"
-            />
-            <label>Remember me</label>
+            <FormControlLabel control={<Checkbox />} label="Remember me" />
+            {/* <label>Remember me</label> */}
           </div>
 
           <ThemeProvider theme={theme}>

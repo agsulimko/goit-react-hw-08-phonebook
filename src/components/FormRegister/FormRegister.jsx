@@ -82,7 +82,7 @@ const FormRegister = ({ register }) => {
           </div>
           <div>
             <FormControlLabel
-              control={<Checkbox defaultChecked />}
+              control={<Checkbox />}
               label=" I want to receive inspiration, marketing promotions and updates
               via email."
             />
