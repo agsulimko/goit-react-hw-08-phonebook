@@ -1,6 +1,8 @@
+:root {--bd-gradient: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7));}
 ul{
     list-style-type: none;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 .listLayout{
         /* display: flex;
@@ -11,15 +13,16 @@ ul{
 display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
     border-bottom: 1px solid #2a363b;
         padding-left: 0;
             margin-bottom: 0;
+            margin-top: 0;
    
 }
 .h1 {
     margin: 40px auto;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 
     text-align: center;
 
@@ -32,12 +35,16 @@ display: flex;
             font-size: 18px;
             text-align: 'center';
 }
-
+.itemRegister{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 
     .circle {
             width: 20px;
             height: 20px;
             border-radius: 50%;
+            margin-right: 8px;
             /* Makes it a circle */
             background-color: rgb(16, 211, 104);
             /* Change to your preferred color */
@@ -53,5 +60,22 @@ gap:50px;
         .divLogout{
              display: flex;
             align-items: center;
+            margin: 0;
         }
        
+        .logoutButton{
+          
+        }
+.sectionHome{
+    /* background-image: url(../../image/Phone.png);
+    background-repeat: no-repeat;
+    max-width: 1440px;
+        background-position: center;
+        background-size: cover; */
+}
+            
+        
+   
+
+
+              

@@ -10,7 +10,7 @@ const initialState = {
 
 const handleAuthFulfilled = (state, { payload }) => {
   state.token = payload.token;
-  // state.profile = payload.user;
+
   state.user = payload.user;
 };
 
@@ -20,8 +20,6 @@ const authSlice = createSlice({
   reducers: {
     loginOut: state => {
       state.token = '';
-      // state.user = null;
-      // state.profile = null;
     },
   },
   extraReducers: builder => {

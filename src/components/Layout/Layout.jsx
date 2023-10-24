@@ -9,7 +9,10 @@ import { deleteToken } from "api/auth";
 
 import { refreshThunk } from "redux/auth/auchOperations";
 import { loginOut } from "redux/auth/auchSlice";
-
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { deepPurple } from "@mui/material/colors";
+import "@fontsource/roboto/500.css";
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
@@ -23,6 +26,11 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
+const theme = createTheme({
+  palette: {
+    primary: deepPurple,
+  },
+});
 const Layout = () => {
   const navigate = useNavigate();
   const isAuth = useSelector(selectAuth);
@@ -32,14 +40,12 @@ const Layout = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());
-    // if (user) {
-    //   console.log(user);
-    // } else console.log("00000");
   }, [dispatch]);
 
   const handleClick = () => {
     if (isAuth) {
       dispatch(loginOut());
+
       deleteToken();
     } else navigate("/login");
   };
@@ -54,28 +60,48 @@ const Layout = () => {
           </li>
           <li>{isAuth && <StyledLink to="/contacts">Contacts</StyledLink>}</li>
 
-          <li>
+          <li className={css.itemRegister}>
             {/* <StyledLink to="/register">Registration</StyledLink> */}
             {!isAuth && <StyledLink to="/register">Registration</StyledLink>}
           </li>
 
           <li className={css.itemWelKome}>
             {isAuth && user && (
-              <p className={css.spanWelcome}>Welkome - {user.name}!</p>
+              <b className={css.spanWelcome}>Welkome - {user.name}!</b>
             )}
-            <p className={css.textLayout}> {user.email}</p>
+            {isAuth && user && <p className={css.textLayout}> {user.email}</p>}
           </li>
 
           <li>
             <div className={css.divLogout}>
               {isAuth && <div className={css.circle}> </div>}
-              <StyledLink
-                to="/login"
-                onClick={handleClick}
-                className={css.logout}
-              >
-                {isAuth ? "Login Out" : "Login"}
-              </StyledLink>
+
+              {!isAuth ? (
+                <StyledLink
+                  to="/login"
+                  onClick={handleClick}
+                  className={css.logout}
+                >
+                  {isAuth ? "Login Out" : "Login"}
+                </StyledLink>
+              ) : (
+                <ThemeProvider theme={theme}>
+                  <Button
+                    to="/login"
+                    onClick={handleClick}
+                    className={css.logoutButton}
+                    variant="contained"
+                    sx={{
+                      m: 1,
+                      width: "120px",
+                      backgroundColor: "rgb(211, 223, 226)",
+                      color: "black",
+                    }}
+                  >
+                    {isAuth ? "Login Out" : "Login"}
+                  </Button>
+                </ThemeProvider>
+              )}
             </div>
           </li>
         </ul>
@@ -90,3 +116,11 @@ const Layout = () => {
   );
 };
 export default Layout;
+
+// <StyledLink
+//                   to="/login"
+//                   onClick={handleClick}
+//                   className={css.logout}
+//                 >
+//                   {isAuth ? "Login Out" : "Login"}
+//                 </StyledLink>

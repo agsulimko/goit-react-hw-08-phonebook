@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { selectContacts } from "redux/contacts/selectors";
 import { addContacts } from "redux/contacts/operations";
+import toast from "react-hot-toast";
 // import { toast } from 'react-toastify';
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -24,11 +25,13 @@ const ContactForm = () => {
     const existingContact = contacts.find(
       (contact) => contact.name === dataForm.name
     );
-    if (existingContact === "") {
-      return alert(`${dataForm.name} is already in contacts`);
+    if (existingContact) {
+      return toast.error(`${dataForm.name} is already in contacts`, {
+        duration: 1500,
+      });
     }
     dispatch(addContacts(dataForm));
-
+    toast.success("Successfully adding a contact!", { duration: 1500 });
     setName("");
     setNumber("");
   };

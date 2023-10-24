@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { signUp, logIn, setToken, refresh, logOut } from '../../api/auth';
+import { signUp, logIn, setToken, refresh } from '../../api/auth';
 
 export const registrationThunk = createAsyncThunk(
   'auth/registration',
@@ -50,16 +50,16 @@ export const refreshThunk = createAsyncThunk(
   }
 );
 
-export const logoutThunk = createAsyncThunk(
-  'auth/logout',
-  async (_, thunkAPI) => {
-    try {
-      const data = await logOut();
-      setToken(data.token);
-      // After a successful logout, remove the token from the HTTP header
-      // clearAuthHeader();
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const logoutThunk = createAsyncThunk(
+//   'auth/logout',
+//   async (_, thunkAPI) => {
+//     try {
+//       const data = await logOut();
+//        setToken(data.token);
+//       // After a successful logout, remove the token from the HTTP header
+//       // clearAuthHeader();
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );

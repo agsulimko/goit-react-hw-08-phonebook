@@ -1,13 +1,29 @@
+ :root {--bd-gradient:linear-gradient(rgba(46, 47, 66, 0.7),
+     rgba(46, 47, 66, 0.7));}
 .h1 {
-margin: 40px auto;
+padding-top: 250px;
 margin-bottom: 40px;
 text-align: center;
-color: blueviolet;
-
+color:white;
+margin-top: 0;
 }
-
 .h2{
+color: white;
+text-align: center;
+width: 1000px;
+margin: 0 auto;
+}
+.h{
     text-align: center;
         padding-left: 200px;
             padding-right: 200px;
 }
+    
+.mainHome{
+    height: 1000px;
+    background-repeat: no-repeat;
+        max-width: 1440px;
+        background-position: center;
+        background-size: cover;
+    background-image:var(--bd-gradient), url("https://pixabay.com/get/g94d1463e836239c97e63404d3f7e7b343112b918541a67e389abaf01538784ca4ac29ae04a2c83bbaa326fcfa115b64238aff2e0cbe01ebf83493216ad243678_1280.jpg");
+}  

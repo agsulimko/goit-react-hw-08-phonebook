@@ -23,8 +23,8 @@ export const signUp = async body => {
 export const logIn = async body => {
   const { data } = await instance.post('/users/login', body);
   setToken(data.token);
-  console.log(data.user.name);
-  console.log(data.user.email);
+  // console.log(data.user.name);
+  // console.log(data.user.email);
   return data;
 };
 
@@ -33,17 +33,11 @@ export const refresh = async body => {
 
   return data;
 };
-export const logOut = async body => {
-  const { data } = await instance.post('/users/logout', body);
-  deleteToken();
-
-  console.log(data);
-  return data;
-};
-
 // export const logOut = async body => {
 //   const { data } = await instance.post('/users/logout', body);
-//   // setToken(data.token);
-//   console.log(data);
+
+//   deleteToken();
+
+//   console.log('token=>', data.token);
 //   return data;
 // };
