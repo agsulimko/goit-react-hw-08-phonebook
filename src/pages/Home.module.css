@@ -1,7 +1,7 @@
  :root {--bd-gradient:linear-gradient(rgba(46, 47, 66, 0.7),
      rgba(46, 47, 66, 0.7));}
 .h1 {
-padding-top: 250px;
+padding-top: 350px;
 margin-bottom: 40px;
 text-align: center;
 color:white;
@@ -10,16 +10,17 @@ margin-top: 0;
 .h2{
 color: white;
 text-align: center;
-width: 1000px;
+width: 800px;
 margin: 0 auto;
 }
-.h{
+/* .h{
     text-align: center;
         padding-left: 200px;
             padding-right: 200px;
-}
+} */
     
 .mainHome{
+    background-color: dimgray;
     height: 1000px;
     background-repeat: no-repeat;
         max-width: 1440px;
