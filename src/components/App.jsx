@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import PrivateRoute from "../guards/PrivateRoute";
 import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
-import { refreshThunk } from "redux/auth/auchOperations";
+
 import Loader from "./Loader/Loader";
 
 const Home = lazy(() => import("../pages/Home"));
@@ -27,7 +27,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-    dispatch(refreshThunk());
 
     // eslit-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);

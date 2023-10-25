@@ -18,6 +18,8 @@ const authSlice = createSlice({
   reducers: {
     loginOut: state => {
       state.token = '';
+      state.error = null;
+      state.isLoading = false;
     },
   },
   extraReducers: builder => {
