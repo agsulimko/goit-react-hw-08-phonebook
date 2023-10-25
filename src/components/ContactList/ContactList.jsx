@@ -6,6 +6,7 @@ import { selectContacts, selectFilter } from "redux/contacts/selectors";
 const ContactList = () => {
   const { contacts } = useSelector(selectContacts);
   const { filter } = useSelector(selectFilter);
+
   // const isLoggedIn = useSelector(selectIsLoggedIn);
   const filteredContacts = (filter, contacts) => {
     if (!filter) return;

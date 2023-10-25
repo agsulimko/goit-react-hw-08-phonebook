@@ -34,7 +34,6 @@ const contactsSlice = createSlice({
         //   contact => contact.id !== action.payload.id
         // );
 
-        console.log('wetwetewtrwe');
         const index = state.contacts.findIndex(
           contact => contact.id === action.payload.id
         );

@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
 import "@fontsource/roboto/500.css";
+import Loader from "components/Loader/Loader";
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
@@ -108,7 +109,8 @@ const Layout = () => {
       </header>
 
       <main>
-        <Suspense fallback={<div>Laoding...</div>}>
+        <Suspense fallback={<div>{Loader()}</div>}>
+          {/* <Suspense fallback={<div>Laoding...</div>}> */}
           <Outlet />
         </Suspense>
       </main>

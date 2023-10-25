@@ -14,6 +14,7 @@ import PrivateRoute from "../guards/PrivateRoute";
 import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
 import { refreshThunk } from "redux/auth/auchOperations";
+import Loader from "./Loader/Loader";
 
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
@@ -23,11 +24,11 @@ const NotFound = lazy(() => import("../pages/NotFound"));
 
 const App = () => {
   const dispatch = useDispatch();
-  // const { isLoading, error } = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
     dispatch(refreshThunk());
+
     // eslit-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -35,7 +36,8 @@ const App = () => {
     <Container>
       <Box sx={{ bgcolor: "#cfe8fc", height: "600vh", paddingTop: "4px" }}>
         <Toaster />
-        <Suspense fallback={"Loading....."}>
+
+        <Suspense fallback={<div>{Loader()}</div>}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -75,22 +77,3 @@ const App = () => {
 };
 
 export default App;
-
-/* <div className="container"> */
-
-/* <h1 className={css.h1}>Phonebook</h1> */
-
-/* <nav>
-        <StyledLink to="/" end>
-          Home
-        </StyledLink>
-        <StyledLink to="/register">Registration</StyledLink>
-        <StyledLink to="/login">Login</StyledLink>
-      </nav> */
-
-/* <ContactForm />
-        <h2 className={css.h2}>Contacts</h2>
-        <Filter />
-        {isLoading && <b>Loading contacts...</b>}
-        {error && <b>{error}</b>}
-        <ContactList /> */

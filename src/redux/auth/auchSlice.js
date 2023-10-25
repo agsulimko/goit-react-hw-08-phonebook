@@ -4,8 +4,6 @@ import { loginThunk, refreshThunk, registrationThunk } from './auchOperations';
 const initialState = {
   token: '',
   user: null,
-
-  // profile: null,
 };
 
 const handleAuthFulfilled = (state, { payload }) => {
