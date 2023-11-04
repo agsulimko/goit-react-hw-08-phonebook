@@ -26,5 +26,5 @@ margin: 0 auto;
         max-width: 1440px;
         background-position: center;
         background-size: cover;
-    background-image:var(--bd-gradient), url("https://pixabay.com/get/g94d1463e836239c97e63404d3f7e7b343112b918541a67e389abaf01538784ca4ac29ae04a2c83bbaa326fcfa115b64238aff2e0cbe01ebf83493216ad243678_1280.jpg");
+    background-image:var(--bd-gradient), url("https://pixabay.com/get/g3a62c151ff35eb64ceb82a207355fee099d724eb928c61b710d051d257e4046ca31df63c9d323825ac4c0972bb13f8b62ae07aa1bd9067bc0fdda027121cd01d_1280.jpg");
 }  
