@@ -57,3 +57,18 @@ export const deleteContacts = createAsyncThunk(
     }
   }
 );
+
+export const editContacts = createAsyncThunk(
+  'contacts/editContacts',
+  async ({ id, name, number }, thunkAPI) => {
+    try {
+      const response = await instance.patch(`/contacts/${id}`, {
+        name: name,
+        number: number,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

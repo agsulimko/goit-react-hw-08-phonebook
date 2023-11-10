@@ -2,6 +2,7 @@ import Contact from "components/Contact/Contact";
 import css from "./ContactList.module.css";
 import { useSelector } from "react-redux";
 import { selectContacts, selectFilter } from "redux/contacts/selectors";
+// import toast from "react-hot-toast";
 
 const ContactList = () => {
   const { contacts } = useSelector(selectContacts);
@@ -20,7 +21,7 @@ const ContactList = () => {
   return (
     <ul className={css.list}>
       {(visibleContacts ?? contacts).map((contact) => (
-        <Contact contact={contact} key={contact.id} />
+        <Contact contacts={contact} key={contact.id} />
       ))}
     </ul>
   );
