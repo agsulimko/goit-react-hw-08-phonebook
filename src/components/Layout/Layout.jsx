@@ -68,7 +68,7 @@ const Layout = () => {
 
           <li className={css.itemWelKome}>
             {isAuth && user && (
-              <b className={css.spanWelcome}>Welkome - {user.name}!</b>
+              <b className={css.spanWelcome}>Welcome - {user.name}!</b>
             )}
             {isAuth && user && <p className={css.textLayout}> {user.email}</p>}
           </li>
