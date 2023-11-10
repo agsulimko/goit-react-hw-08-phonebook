@@ -69,7 +69,7 @@ const ContactForm = () => {
       <Button
         className={css.btnAdd}
         type="submit"
-        sx={{ m: 1, width: "300px" }}
+        sx={{ m: 1, width: "400px" }}
       >
         Add contact
       </Button>

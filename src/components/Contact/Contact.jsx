@@ -4,6 +4,7 @@ import css from "./Contact.module.css";
 import Button from "@mui/material/Button";
 import { deleteContacts, editContacts } from "redux/contacts/operations";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const Contact = ({ contacts }) => {
   const dispatch = useDispatch();
@@ -14,11 +15,15 @@ const Contact = ({ contacts }) => {
   const handlEdit = () => {
     setIsEditMode((prev) => !prev);
   };
-  const handleDelete = () => dispatch(deleteContacts(contacts?.id));
+  const handleDelete = () => {
+    dispatch(deleteContacts(contacts?.id));
+    toast.success("Successfully deleted a contact!", { duration: 1500 });
+  };
 
   useEffect(() => {
     if (!isEditMode && (name !== contacts.name || number !== contacts.number)) {
       dispatch(editContacts({ id: contacts.id, name, number }));
+      toast.success("Successfully edit a contact!", { duration: 1500 });
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,17 +50,32 @@ const Contact = ({ contacts }) => {
             onChange={handleInputChange}
             type="text"
             name="editName"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
             value={name}
+            className={css.input}
           />
           <input
             onChange={handleInputChange}
             type="tel"
             name="editNumber"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             value={number}
+            required
+            className={css.input}
           />
         </>
       )}
-      <Button onClick={handlEdit}>{isEditMode ? "Save" : "Edit"}</Button>
+      <Button
+        onClick={handlEdit}
+        type="button"
+        className={css.btnClose}
+        sx={{ m: 1, width: "110px" }}
+      >
+        {isEditMode ? "Save" : "Edit"}
+      </Button>
       <Button
         type="button"
         className={css.btnClose}

@@ -31,7 +31,7 @@
 
 .btnAdd{
 /* width: 100px; */
-margin: auto;
+margin: 0;
 padding: 5px 5px;
 border-radius: 5px ;
 border: 0.5px solid rgb(144, 144, 226);

@@ -9,15 +9,17 @@ import { useSelector } from "react-redux";
 const Contacts = () => {
   const isLoading = useSelector(selectLoading);
   return (
-    <main>
-      <h1 className={css.h1}>Phonebook</h1>
+    <main className={css.mainContacts}>
+      <div className={css.mainContacts}>
+        <h1 className={css.h1}>Phonebook</h1>
 
-      <ContactForm />
-      <h2 className={css.h2}>Contacts</h2>
-      <Filter />
-      {/* {/* {isLoading && <b>Loading contacts...</b>} */}
-      {isLoading && <b>{Loader()}</b>}
-      {/* {error && <b>{Loader()}</b>} */}
+        <ContactForm />
+        <h2 className={css.h2}>Contacts</h2>
+        <Filter />
+        {/* {/* {isLoading && <b>Loading contacts...</b>} */}
+        {isLoading && <b>{Loader()}</b>}
+        {/* {error && <b>{Loader()}</b>} */}
+      </div>
       <ContactList />
     </main>
   );

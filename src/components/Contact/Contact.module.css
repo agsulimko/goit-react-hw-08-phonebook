@@ -3,7 +3,10 @@
     gap:20px;
     align-items: center;
     list-style-type: circle;
-    justify-content: space-between
+    justify-content: space-between;
+    background-color: white;
+        border: 0.5px solid black;
+        border-radius: 5px;
 }
 .btnClose{
     
@@ -21,19 +24,23 @@
     background-color: rgb(103, 103, 238);
 }
 
+h3{
+margin: 0;
+}
 .nameNumber {
     display: flex;
     gap: 20px;
     width: 800px;
-    
-margin: 0 auto;
-   
+    margin: 0;
+margin-left: 20px;
+    /* margin-right: 20px; */ 
+   /* padding: 20px; */
 }
-/* .name{
-     
-    margin: 0 auto;
+.input {
+    width: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0.5px solid rgb(144, 144, 226);
+    height: 36px;
+    border-radius: 5px;
 }
-.number{
-    
-margin: 0 auto;
-} */
