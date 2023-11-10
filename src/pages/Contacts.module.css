@@ -1,11 +1,14 @@
 .h1 {
+  
     margin: 0;
     margin-bottom: 20px;
     padding-top: 20px;
-    text-align: center;}
+    text-align: center;
+  color: rgb(200, 233, 235);
+}
 
     .h2{text-align: center;
-
+color: rgb(200, 233, 235);
     }
 
       .mainContacts{

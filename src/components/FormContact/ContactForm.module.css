@@ -13,6 +13,7 @@
 .label{
     display: flex;
         flex-direction: column;
+        color: rgb(200, 233, 235);
         
 }
 
@@ -21,6 +22,7 @@
     border: 0.5px solid rgb(144, 144, 226);
     height: 36px;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .input:focus {
