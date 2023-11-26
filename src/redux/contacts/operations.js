@@ -30,20 +30,7 @@ export const addContacts = createAsyncThunk(
     }
   }
 );
-// export const addContacts = createAsyncThunk(
-//   '/contacts/addContacts',
-//   async ({ name, number }, thunkAPI) => {
-//     try {
-//       const data = await postContacts({
-//         name: name,
-//         number: number,
-//       });
-//       return data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );
+
 
 export const deleteContacts = createAsyncThunk(
   'contacts/deleteContacts',
