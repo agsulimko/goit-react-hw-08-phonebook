@@ -7,8 +7,8 @@ import { selectAuth, selectUser } from "../../redux/auth/auchSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteToken } from "api/auth";
 
-import { refreshThunk } from "redux/auth/auchOperations";
-import { loginOut } from "redux/auth/auchSlice";
+import { logoutThunk, refreshThunk } from "redux/auth/auchOperations";
+
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
@@ -45,7 +45,7 @@ const Layout = () => {
 
   const handleClick = () => {
     if (isAuth) {
-      dispatch(loginOut());
+      dispatch(logoutThunk());
 
       deleteToken();
     } else navigate("/login");
