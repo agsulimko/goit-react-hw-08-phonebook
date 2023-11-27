@@ -35,9 +35,9 @@ const theme = createTheme({
 const Layout = () => {
   const navigate = useNavigate();
   const isAuth = useSelector(selectAuth);
-
+  console.log(isAuth);
   const user = useSelector(selectUser);
-
+  console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());
