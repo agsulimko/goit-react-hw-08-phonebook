@@ -9,13 +9,13 @@ import {
 const initialState = {
   token: '',
   user: null,
-  isLoggedIn: false,
-  isRefreshing: false,
+  // isLoggedIn: false,
+  // isRefreshing: false,
 };
 
 const handleAuthFulfilled = (state, { payload }) => {
   state.token = payload.token;
-  state.isLoggedIn = true;
+  // state.isLoggedIn = true;
   state.user = payload.user;
 };
 
@@ -40,8 +40,8 @@ const authSlice = createSlice({
       })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         // state.user = payload;
-        state.isLoggedIn = true;
-        state.isRefreshing = false;
+        // state.isLoggedIn = true;
+        // state.isRefreshing = false;
       });
     // .addCase(refreshThunk.fulfilled, (state, { payload }) => {
     //   state.user = payload;
