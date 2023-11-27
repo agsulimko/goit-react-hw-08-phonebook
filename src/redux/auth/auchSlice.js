@@ -1,10 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  loginThunk,
-  refreshThunk,
-  registrationThunk,
-  logoutThunk,
-} from './auchOperations';
+import { loginThunk, refreshThunk, registrationThunk } from './auchOperations';
 
 const initialState = {
   token: '',
@@ -20,23 +15,18 @@ const handleAuthFulfilled = (state, { payload }) => {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  // reducers: {
-  //   loginOut: state => {
-  //     state.token = '';
-  //     state.error = null;
-  //     state.isLoading = false;
-  //   },
-  // },
+  reducers: {
+    loginOut: state => {
+      state.token = '';
+      state.error = null;
+      state.isLoading = false;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(registrationThunk.fulfilled, handleAuthFulfilled)
       .addCase(loginThunk.fulfilled, handleAuthFulfilled)
-      .addCase(logoutThunk.fulfilled, (state, { payload }) => {
-        state.user = { name: null, phone: null };
-        state.token = '';
-        state.error = null;
-        state.isLoading = false;
-      })
+      // .addCase(logoutThunk.fulfilled, handleAuthFulfilled)
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user = payload;
       });
@@ -45,4 +35,4 @@ const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
-export const { logOut } = authSlice.actions;
+export const { loginOut } = authSlice.actions;
