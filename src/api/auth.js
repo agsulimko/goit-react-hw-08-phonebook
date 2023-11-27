@@ -33,11 +33,11 @@ export const refresh = async body => {
 
   return data;
 };
-// export const logOut = async body => {
-//   const { data } = await instance.post('/users/logout', body);
+export const logOut = async body => {
+  const { data } = await instance.post('/users/logout', body);
 
-//   deleteToken();
+  deleteToken();
 
-//   console.log('token=>', data.token);
-//   return data;
-// };
+  console.log('token=>', data.token);
+  return data;
+};

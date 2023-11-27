@@ -6,6 +6,7 @@ import { deepPurple, purple } from "@mui/material/colors";
 import css from "./FormLogin.module.css";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { useDispatch } from "react-redux";
 
 const theme = createTheme({
   palette: {
@@ -14,13 +15,16 @@ const theme = createTheme({
   },
 });
 const FormLogin = ({ login }) => {
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = e.target.elements;
-    login({
-      email: email.value,
-      password: password.value,
-    });
+    dispatch(
+      login({
+        email: email.value,
+        password: password.value,
+      })
+    );
   };
   return (
     <div>
