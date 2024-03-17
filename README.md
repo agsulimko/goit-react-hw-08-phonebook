@@ -18,7 +18,6 @@ Routing with the React Router library. The application contains three pages:
 ## Back-End
 
 1. https://connections-api.herokuapp.com/docs/#/
-2. 
-3. 
-4. 
+
+
 
