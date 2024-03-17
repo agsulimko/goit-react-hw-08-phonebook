@@ -25,6 +25,7 @@ export const logIn = async body => {
   setToken(data.token);
   // console.log(data.user.name);
   // console.log(data.user.email);
+  // console.log(data.user.email);
   return data;
 };
 
