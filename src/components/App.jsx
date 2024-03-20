@@ -15,7 +15,6 @@ import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
 
 import Loader from "./Loader/Loader";
-// import { refreshThunk } from "redux/auth/auchOperations";
 
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
@@ -28,7 +27,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-    // dispatch(refreshThunk());
 
     // eslit-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
