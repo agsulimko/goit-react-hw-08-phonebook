@@ -38,7 +38,7 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
-        // state.user = payload;
+        state.user = payload;
       });
   },
 });
