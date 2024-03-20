@@ -25,6 +25,7 @@ export const logIn = async body => {
   setToken(data.token);
   // console.log(data.user.name);
   // console.log(data.user.email);
+  // console.log(data.user.email);
   return data;
 };
 
@@ -33,7 +34,6 @@ export const refresh = async body => {
 
   return data;
 };
-
 export const logOut = async body => {
   const { data } = await instance.post('/users/logout', body);
 
