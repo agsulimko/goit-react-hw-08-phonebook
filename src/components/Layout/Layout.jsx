@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteToken } from "api/auth";
 
 import { logoutThunk, refreshThunk } from "redux/auth/auchOperations";
-// import { loginOut } from "redux/auth/auchSlice";
+
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
@@ -35,9 +35,9 @@ const theme = createTheme({
 const Layout = () => {
   const navigate = useNavigate();
   const isAuth = useSelector(selectAuth);
-  console.log(isAuth);
+
   const user = useSelector(selectUser);
-  console.log(user);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());
