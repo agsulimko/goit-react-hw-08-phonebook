@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/354.4c7c9640.chunk.css","mappings":"AAAA,kCACI,iBAIJ,CAEI,8BACI,oBAER","sources":["components/FormRegister/FormRegister.module.css"],"sourcesContent":[".registrMain {\n    text-align: center;\n   \n           \n        \n}\n\n    .linkNav {\n        text-decoration: none\n        \n}"],"names":[],"sourceRoot":""}
