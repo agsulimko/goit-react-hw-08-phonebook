@@ -1,17 +1,22 @@
  :root {--bd-gradient:linear-gradient(rgba(46, 47, 66, 0.7),
      rgba(46, 47, 66, 0.7));}
 .h1 {
-padding-top: 350px;
-margin-bottom: 40px;
+padding-top: 300px;
+margin-bottom: 50px;
 text-align: center;
-color:white;
+/* color:black; */
+color: rgb(255, 255, 255);
+    text-shadow: rgba(255, 255, 255, 0.1) -1px -1px 1px, rgba(0, 0, 0, 0.5) 1px 1px 1px;
 margin-top: 0;
 }
-.h2{
-color: rgb(200, 233, 235);
-text-align: center;
-width: 800px;
+.p{
+color:rgb(246, 244, 250);
+/* text-align: center; */
+/* width: 800px; */
 margin: 0 auto;
+padding-left: 30px;
+padding-right: 30px;
+min-width:459px;
 }
 /* .h{
     text-align: center;
@@ -20,11 +25,12 @@ margin: 0 auto;
 } */
     
 .mainHome{
-    background-color: dimgray;
-    height: 1000px;
-    background-repeat: no-repeat;
-        max-width: 1440px;
-        background-position: center;
-        background-size: cover;
-    background-image:var(--bd-gradient), url(../image/clipboard.jpg);
+    /* background-image: url("../image/clipboard.jpg"); */
+    /* background-color: dimgray; */
+    /* height: 1000px; */
+    /* background-repeat: no-repeat; */
+        /* max-width: 1440px; */
+        /* background-position: center; */
+        /* background-size: cover; */
+    /* background-image:var(--bd-gradient), url(../image/clipboard.jpg); */
 }  

@@ -6,12 +6,22 @@ import { Link } from "react-router-dom";
 import css from "./FormRegister.module.css";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import styled from "styled-components";
+
 const theme = createTheme({
   palette: {
     primary: deepPurple,
     secondary: purple,
   },
 });
+
+const StyledLink = styled(Link)`
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  /* color: black; */
+  font-weight: 500;
+`;
 // import { signUp } from "api/user";
 const FormRegister = ({ register }) => {
   const handleSubmit = (event) => {
@@ -29,16 +39,17 @@ const FormRegister = ({ register }) => {
     });
   };
   return (
-    <div>
+    <div className={css.divLogin}>
       <main className={css.registrMain}>
-        <h1>SignUp</h1>
-        <Link to="/" className={css.linkNav}>
+        <h1 className={css.H1_Title}>SignUp</h1>
+        <StyledLink to="/" className={css.linkNav}>
           Back to home
-        </Link>
+        </StyledLink>
         <form onSubmit={handleSubmit}>
           <div>
             {/* <label htmlFor="exampleInputName">Name</label> */}
             <TextField
+              className={css.name}
               type="text"
               name="name"
               id="exampleInputName"
@@ -53,6 +64,7 @@ const FormRegister = ({ register }) => {
           <div>
             {/* <label htmlFor="exampleInputEmail">Email address</label> */}
             <TextField
+              className={css.email}
               type="email"
               name="email"
               id="exampleInputEmail"
@@ -67,6 +79,7 @@ const FormRegister = ({ register }) => {
           <div>
             {/* <label htmlFor="exampleInputPassword">Password</label> */}
             <TextField
+              className={css.password}
               type="password"
               name="password"
               id="exampleInputPassword"
@@ -82,6 +95,8 @@ const FormRegister = ({ register }) => {
           </div>
           <div>
             <FormControlLabel
+              className={css.remember}
+              sx={{ marginLeft: "15px", marginRight: "52px" }}
               control={<Checkbox />}
               label=" I want to receive inspiration, marketing promotions and updates
               via email."

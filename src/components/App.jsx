@@ -1,5 +1,3 @@
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
@@ -15,8 +13,9 @@ import PublicRoute from "../guards/PublicRoute";
 import { Toaster } from "react-hot-toast";
 
 import Loader from "./Loader/Loader";
-// import { refreshThunk } from "redux/auth/auchOperations";
-
+import { refreshThunk } from "redux/auth/auchOperations";
+import { theme } from "../styles/theme-file"; // Import your theme object
+import { ThemeProvider } from "@mui/material/styles"; // Import ThemeProvider
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
@@ -28,52 +27,50 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-    // dispatch(refreshThunk());
+    dispatch(refreshThunk());
 
     // eslit-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (
-    <Container>
-      <Box sx={{ bgcolor: "#cfe8fc", height: "600vh", paddingTop: "4px" }}>
-        <Toaster />
+    <ThemeProvider theme={theme}>
+      <Toaster />
 
-        <Suspense fallback={<div>{Loader()}</div>}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
+      <Suspense fallback={<div>{Loader()}</div>}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
 
-              <Route
-                path="/contacts"
-                element={
-                  <PrivateRoute>
-                    <Contacts />
-                  </PrivateRoute>
-                }
-              />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
 
-              <Route
-                path="/register"
-                element={
-                  <PublicRoute>
-                    <Register />
-                  </PublicRoute>
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  <PublicRoute>
-                    <Login />
-                  </PublicRoute>
-                }
-              />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </Box>
-    </Container>
+            <Route
+              path="/register"
+              element={
+                <PublicRoute>
+                  <Register />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </ThemeProvider>
   );
 };
 
