@@ -16,9 +16,8 @@ const Contacts = () => {
         <ContactForm />
         <h2 className={css.h2}>Contacts</h2>
         <Filter />
-        {/* {/* {isLoading && <b>Loading contacts...</b>} */}
+
         {isLoading && <b>{Loader()}</b>}
-        {/* {error && <b>{Loader()}</b>} */}
       </div>
       <ContactList />
     </main>

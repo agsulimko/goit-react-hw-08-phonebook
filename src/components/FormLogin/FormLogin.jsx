@@ -103,6 +103,8 @@ const FormLogin = ({ login }) => {
               sx={{
                 m: 1,
                 width: "350px",
+                margin: "0",
+                padding: "8px 0",
                 backgroundColor: "rgb(103, 103, 238)",
               }}
             >

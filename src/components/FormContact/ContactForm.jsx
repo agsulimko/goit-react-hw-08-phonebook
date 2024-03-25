@@ -69,7 +69,15 @@ const ContactForm = () => {
       <Button
         className={css.btnAdd}
         type="submit"
-        sx={{ m: 1, width: "400px" }}
+        variant="contained"
+        sx={{
+          m: 1,
+          width: "400px",
+          backgroundColor: "rgb(103, 103, 238)",
+          margin: 0,
+          marginTop: "30px",
+          padding: "8px 0",
+        }}
       >
         Add contact
       </Button>

@@ -7,6 +7,8 @@
     background-color: white;
         border: 0.5px solid black;
         border-radius: 5px;
+        margin-bottom: 5px;
+        padding: 3px 0;
 }
 .btnClose{
     
@@ -45,3 +47,8 @@ margin-left: 20px;
     border-radius: 5px;
     font-size: 18px;
 }
+
+.div_input{display: flex;}
+
+.div_button{display: flex;
+gap:30px;}

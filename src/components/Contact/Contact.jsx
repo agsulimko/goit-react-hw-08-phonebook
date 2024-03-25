@@ -45,7 +45,7 @@ const Contact = ({ contacts }) => {
           <h3 className={css.number}>{contacts.number}</h3>
         </div>
       ) : (
-        <>
+        <div className={css.div_input}>
           <input
             onChange={handleInputChange}
             type="text"
@@ -66,25 +66,41 @@ const Contact = ({ contacts }) => {
             required
             className={css.input}
           />
-        </>
+        </div>
       )}
-      <Button
-        onClick={handlEdit}
-        type="button"
-        className={css.btnClose}
-        sx={{ m: 1, width: "110px" }}
-      >
-        {isEditMode ? "Save" : "Edit"}
-      </Button>
-      <Button
-        type="button"
-        className={css.btnClose}
-        aria-label="Close"
-        onClick={handleDelete}
-        sx={{ m: 1, width: "110px" }}
-      >
-        Delete
-      </Button>
+      <div className={css.div_button}>
+        <Button
+          onClick={handlEdit}
+          type="button"
+          variant="contained"
+          className={css.btnClose}
+          sx={{
+            m: 1,
+            width: "110px",
+            margin: 0,
+            backgroundColor: "rgb(103, 103, 238)",
+            padding: "8px 0",
+          }}
+        >
+          {isEditMode ? "Save" : "Edit"}
+        </Button>
+        <Button
+          type="button"
+          variant="contained"
+          className={css.btnClose}
+          aria-label="Close"
+          onClick={handleDelete}
+          sx={{
+            m: 1,
+            width: "110px",
+            margin: 0,
+            backgroundColor: "rgb(103, 103, 238)",
+            padding: "8px 0",
+          }}
+        >
+          Delete
+        </Button>
+      </div>
     </li>
   );
 };
