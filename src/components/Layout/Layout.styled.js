@@ -90,5 +90,11 @@ const Start = styled.div`
     background-color: rgb(103, 103, 238);
   } */
 `;
+const B = styled.b`
+  /* margin-right: 40px; */
+`;
+const P = styled.p`
+  /* margin-right: 40px; */
+`;
 
-export { Header, Start, Main, Ul, Svg, DivNav, DivLogoHome };
+export { Header, Start, Main, Ul, Svg, DivNav, DivLogoHome, B, P };

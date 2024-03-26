@@ -24,6 +24,8 @@ import {
   Svg as BaseSvg,
   DivNav as BaseDivNav,
   DivLogoHome,
+  B as BaseB,
+  P as BaseP,
 } from "../Layout/Layout.styled";
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -47,7 +49,7 @@ const theme = createTheme({
 const Container = styled(BaseContainer)`
   max-width: 1440px;
   &.active-home {
-    /* position: relative; */
+    position: relative;
     min-width: 500px;
     padding-left: 0;
     padding-right: 0;
@@ -92,6 +94,7 @@ const Ul = styled(BaseUl)`
     left: 260px;
     top: 45px;
     border-bottom: none;
+    padding-right: 0;
 
     /* background-color: rgba(129, 130, 133, 0.4);
     height: 100vh;
@@ -116,9 +119,11 @@ const Header = styled(BaseHeader)`
     padding-bottom: 0;
     width: 470px;
     position: absolute;
-    /* padding-left: 30px; */
-    margin-left: 30px;
-    margin-right: 14px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 18px;
+    /* margin-left: 30px; */
+    /* margin-right: 14px; */
     /* background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -151,6 +156,19 @@ const Svg = styled(BaseSvg)`
     height: 100vh;
     width: 300px; */
   }
+`;
+const B = styled(BaseB)`
+  position: absolute;
+  left: 160px;
+  top: 90px;
+  /* margin-right: 40px; */
+`;
+const P = styled(BaseP)`
+  position: absolute;
+  left: 140px;
+  top: 50px;
+
+  /* margin-right: 40px; */
 `;
 
 const Layout = () => {
@@ -203,12 +221,20 @@ const Layout = () => {
                 )}
               </li>
 
-              <li className={css.itemWelKome}>
+              <li
+                // className={css.itemWelKome}
+                className={isActiveHome ? "active-home" : css.itemWelKome}
+              >
                 {isAuth && user && (
-                  <b className={css.spanWelcome}>Welcome - {user.name}!</b>
+                  <B className={isActiveHome ? "active-home" : css.spanWelcome}>
+                    Welcome - {user.name}!
+                  </B>
                 )}
                 {isAuth && user && (
-                  <p className={css.textLayout}> {user.email}</p>
+                  <P className={isActiveHome ? "active-home" : css.textLayout}>
+                    {" "}
+                    {user.email}
+                  </P>
                 )}
               </li>
 
@@ -266,11 +292,3 @@ const Layout = () => {
   );
 };
 export default Layout;
-
-// <StyledLink
-//                   to="/login"
-//                   onClick={handleClick}
-//                   className={css.logout}
-//                 >
-//                   {isAuth ? "Login Out" : "Login"}
-//                 </StyledLink>
