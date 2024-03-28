@@ -23,9 +23,9 @@ import {
   Ul as BaseUl,
   Svg as BaseSvg,
   DivNav as BaseDivNav,
-  DivLogoHome,
   B as BaseB,
   P as BaseP,
+  DivLogoHome as BaseDivLogoHome,
 } from "../Layout/Layout.styled";
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -143,6 +143,12 @@ const DivNav = styled(BaseDivNav)`
   }
 `;
 
+const DivLogoHome = styled(BaseDivLogoHome)`
+  &.active-home {
+    margin-right: auto;
+  }
+`;
+
 const Svg = styled(BaseSvg)`
   &.active-home {
     /* position: absolute; */
@@ -158,15 +164,19 @@ const Svg = styled(BaseSvg)`
   }
 `;
 const B = styled(BaseB)`
-  position: absolute;
-  left: 160px;
-  top: 90px;
+  &.active-home {
+    position: absolute;
+    left: 160px;
+    top: 90px;
+  }
   /* margin-right: 40px; */
 `;
 const P = styled(BaseP)`
-  position: absolute;
-  left: 140px;
-  top: 50px;
+  &.active-home {
+    position: absolute;
+    left: 140px;
+    top: 50px;
+  }
 
   /* margin-right: 40px; */
 `;
@@ -198,7 +208,7 @@ const Layout = () => {
       <Container className={isActiveHome ? "active-home" : ""}>
         <Header className={isActiveHome ? "active-home" : ""}>
           <DivNav>
-            <DivLogoHome>
+            <DivLogoHome className={isActiveHome ? "active-home" : ""}>
               <Svg
                 className={isActiveHome ? "active-home" : ""}
                 width={24}

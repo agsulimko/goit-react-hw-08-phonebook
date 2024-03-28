@@ -1,53 +1,45 @@
 import styled from 'styled-components';
-// import { NavLink } from 'react-router-dom';
-// import { theme } from 'styles';
-
-// const StyledLink = styled(NavLink)`
-//   background-color: ${theme.color.white_full};
-// `;
 
 const Header = styled.header`
-  /* position: relative; */
   margin: 0 auto;
 
-  /* padding-left: 0; */
   font-family: 'Manrope', sans-serif;
-  /* border-bottom: 2 solid #2a363b; */
-  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 5px 0px; */
-  /* display: flex; */
-  /* align-items: center;
 
-  justify-content: center;
-  gap: 40px; */
-  padding: 0px 30px;
   width: 100%;
-  /* z-index: 10; */
-  /* border-bottom: 1 solid #2a363b;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 5cqmin 0px; */
-  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 0px -1px,
-    rgba(0, 0, 0, 0.14) 0px 2px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 0px 0px; */
-`;
-// const UlListLayout = styled.ul`
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
+  @media screen and (min-width: 768px) {
+    padding: 0px 5px;
+  }
 
-//   padding-left: 0;
-//   margin-bottom: 0;
-//   margin-top: 0;
-//   gap: 40px;
-// `;
+  @media screen and (min-width: 1440px) {
+    margin: 0 auto;
+
+    /* padding: 0px 30px; */
+    width: 100%;
+  }
+`;
 
 const DivNav = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const DivLogoHome = styled.div`
-  display: flex;
+  /* display: flex;
   align-items: center;
   gap: 20px;
-  margin-right: auto;
+  margin-right: auto; */
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* margin-right: auto; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 20px;
+    margin-right: auto;
+  }
 `;
 
 const Main = styled.main`
@@ -58,15 +50,39 @@ const Svg = styled.svg`
 `;
 
 const Ul = styled.ul`
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   align-items: center;
   /* margin-bottom: 16px; */
-  padding-left: 0;
+  /* padding-left: 0;
   margin-bottom: 0;
   margin-top: 0;
   padding-right: 60px;
-  /* margin-left: auto; */
+  margin-left: auto;  */
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-bottom: 16px; */
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-right: 5px;
+    /* margin-left: auto; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-bottom: 16px; */
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    /* padding-right: 5px; */
+    /* margin-left: auto; */
+  }
 `;
 const Start = styled.div`
   position: absolute;
@@ -91,10 +107,28 @@ const Start = styled.div`
   } */
 `;
 const B = styled.b`
+  font-weight: 500px;
+  font-size: 18px;
+  font-weight: 500px;
+  font-size: 18px;
+  text-align: 'center';
+  /* margin-left: 380px; */
   /* margin-right: 40px; */
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 320px;
+  }
 `;
 const P = styled.p`
   /* margin-right: 40px; */
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export { Header, Start, Main, Ul, Svg, DivNav, DivLogoHome, B, P };
