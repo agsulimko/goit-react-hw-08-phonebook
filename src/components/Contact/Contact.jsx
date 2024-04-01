@@ -5,6 +5,9 @@ import Button from "@mui/material/Button";
 import { deleteContacts, editContacts } from "redux/contacts/operations";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+// import { Button as BaseButton } from "../Contact/Contact.styled.js";
+
+// const Button = styled(BaseButton)``;
 
 const Contact = ({ contacts }) => {
   const dispatch = useDispatch();
@@ -76,10 +79,20 @@ const Contact = ({ contacts }) => {
           className={css.btnClose}
           sx={{
             m: 1,
-            width: "110px",
+            // width: "110px",
             margin: 0,
             backgroundColor: "rgb(103, 103, 238)",
-            padding: "8px 0",
+            // padding: "8px 0",
+            // marginBottom: "4px",
+            textTransform: "capitalize",
+            lineHeight: 1,
+            "@media screen and (min-width: 768px)": {
+              padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
+            },
+
+            "@media screen and (min-width: 1440px)": {
+              padding: "8px 40px",
+            },
           }}
         >
           {isEditMode ? "Save" : "Edit"}
@@ -92,10 +105,18 @@ const Contact = ({ contacts }) => {
           onClick={handleDelete}
           sx={{
             m: 1,
-            width: "110px",
+            // width: "110px",
             margin: 0,
             backgroundColor: "rgb(103, 103, 238)",
-            padding: "8px 0",
+            textTransform: "capitalize",
+            lineHeight: 1,
+            "@media screen and (min-width: 768px)": {
+              padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
+            },
+            "@media screen and (min-width: 1440px)": {
+              padding: "8px 40px",
+            },
+            // padding: "8px 0",
           }}
         >
           Delete

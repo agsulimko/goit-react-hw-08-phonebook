@@ -57,7 +57,18 @@ const FormRegister = ({ register }) => {
               variant="outlined"
               // helperText="Some important text"
               autoComplete="name"
-              sx={{ m: 1, width: "350px" }}
+              sx={{
+                m: 1,
+                width: "310px",
+                margin: "8px  1px",
+                "@media screen and (min-width: 768px)": {
+                  width: "350px", // задаем другие паддинги для ширины больше 768px
+                },
+
+                "@media screen and (min-width: 1440px)": {
+                  width: "350px",
+                },
+              }}
             />
           </div>
 
@@ -72,7 +83,18 @@ const FormRegister = ({ register }) => {
               variant="outlined"
               // helperText="Some important text"
               autoComplete="username"
-              sx={{ m: 1, width: "350px" }}
+              sx={{
+                m: 1,
+                width: "310px",
+                margin: "8px  1px",
+                "@media screen and (min-width: 768px)": {
+                  width: "350px", // задаем другие паддинги для ширины больше 768px
+                },
+
+                "@media screen and (min-width: 1440px)": {
+                  width: "350px",
+                },
+              }}
             />
           </div>
 
@@ -89,7 +111,15 @@ const FormRegister = ({ register }) => {
               autoComplete="current-password"
               sx={{
                 m: 1,
-                width: "350px",
+                width: "310px",
+                margin: "8px  1px",
+                "@media screen and (min-width: 768px)": {
+                  width: "350px", // задаем другие паддинги для ширины больше 768px
+                },
+
+                "@media screen and (min-width: 1440px)": {
+                  width: "350px",
+                },
               }}
             />
           </div>
@@ -110,10 +140,18 @@ const FormRegister = ({ register }) => {
               variant="contained"
               sx={{
                 m: 1,
-                width: "350px",
+                width: "310px",
+
                 margin: "0",
                 padding: "8px 0",
                 backgroundColor: "rgb(103, 103, 238)",
+                "@media screen and (min-width: 768px)": {
+                  width: "350px", // задаем другие паддинги для ширины больше 768px
+                },
+
+                "@media screen and (min-width: 1440px)": {
+                  width: "350px",
+                },
               }}
             >
               Registration

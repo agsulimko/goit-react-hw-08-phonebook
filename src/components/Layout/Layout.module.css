@@ -4,6 +4,8 @@ ul{
     list-style-type: none;
     /* padding-bottom: 20px; */
 }
+
+
 .listLayout{
         /* display: flex;
             flex-direction: row;
@@ -14,7 +16,7 @@ display: flex;
     justify-content: space-around;
     align-items: center;
     /* margin-bottom: 16px; */
-    border-bottom: 1px solid #2a363b;
+    /* border-bottom: 1px solid #2a363b; */
         padding-left: 0;
             margin-bottom: 0;
             margin-top: 0;
@@ -34,6 +36,15 @@ display: flex;
 .textLayout{
     margin: 0;
 }
+@media screen and (min-width: 768px) {
+.textLayout {}
+}
+
+@media screen and (min-width: 1440px) {
+    .textLayout {}
+}
+
+
 .spanWelcome{
 /* font-weight: 500px;
 font-size: 18px;
@@ -49,9 +60,23 @@ text-align: 'center';
 
 
 .itemRegister{
-    padding-bottom: 20px;
-    padding-top: 20px;
+        /* position: absolute; */
+            top: 16px;
+                right: 20px;
+   
 }
+@media screen and (min-width: 768px) {
+    .itemRegister { padding-bottom: 20px;
+    padding-top: 20px;}
+}
+
+@media screen and (min-width: 1440px) {
+    .itemRegister {}
+}
+
+
+
+
 
     .circle {
             width: 15px;
@@ -78,21 +103,26 @@ text-align: 'center';
 
 
 
+
+
         .itemWelKome{ 
 /* display: flex;
 align-items: center;
 gap:245px; */
-
-
+ margin-right: auto;
+margin-top: 3px;
 
         }
 
 @media screen and (min-width: 768px) {
  .itemWelKome {
+
  display: flex;
 align-items: center;
-margin:0 20px;
-gap:20px;
+margin:0 40px;
+/* gap:20px; */
+flex-direction: column;
+margin-left: 80px;
                             /* align-items: center; */
                             /* gap: 245px; */
                     
@@ -101,22 +131,55 @@ gap:20px;
                    
                  }
         
-                 @media screen and (min-width: 1440px) {
-                    .itemWelKome {
-                    margin: 0 100px;
-                        gap: 178px;}
+  @media screen and (min-width: 1440px) {
+ .itemWelKome {
+    display: block;
+    flex-direction: row;
+    margin-left: 390px;
+   /* margin: 0 161px; */
+     gap: 178px;}
+         
                  }
    
           
  .divLogout{
-display: flex;
-align-items: center;
-margin: 0;
+  position: absolute; 
+/* display: flex; */
+
+
+
+top:24px;
+    right:129px
         }
+@media screen and (min-width: 768px) {
+    .divLogout {
+        /* position: static; */
+        top: 16px;
+            right: 129px;
+    }}
+@media screen and (min-width: 1440px) {
+    .divLogout {
+        /* position: relative; */
+
+    }
+}
+
 .email{
     margin-right: 20px;
  }
 
+ .active-home{
+   
+    position: absolute;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        top: 16px;
+        left: 360px;
+ }
+.logout{
+   
+}
             
         
    

@@ -26,6 +26,8 @@ import {
   B as BaseB,
   P as BaseP,
   DivLogoHome as BaseDivLogoHome,
+  DivLogout as BaseDivLogout,
+  // Button as BaseButton,
 } from "../Layout/Layout.styled";
 const StyledLink = styled(NavLink)`
   padding: 8px 16px;
@@ -37,6 +39,53 @@ const StyledLink = styled(NavLink)`
   &.active {
     color: white;
     background-color: rgb(103, 103, 238);
+  }
+  &.active-home {
+    padding: 0;
+  }
+`;
+const StyledLinkReg = styled(NavLink)`
+  position: absolute;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  top: 16px;
+  /* right: 20px; */
+  right: 85px;
+  @media screen and (min-width: 768px) {
+    top: 8px;
+  }
+
+  &.active {
+    color: white;
+    background-color: rgb(103, 103, 238);
+    /* padding-top: 0;
+    padding-bottom: 0; */
+  }
+  &.active-home {
+    padding: 0;
+    right: 70px;
+    top: 20px;
+  }
+`;
+
+const StyledLinkLogin = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+
+  &.active {
+    color: white;
+    /* padding: 8px 16px; */
+    border-radius: 4px;
+    background-color: rgb(103, 103, 238);
+  }
+  &.active-home {
+    padding: 0;
   }
 `;
 
@@ -140,12 +189,18 @@ const Header = styled(BaseHeader)`
 const DivNav = styled(BaseDivNav)`
   &.active-home {
     position: absolute;
+
+    position: relative;
+    width: 580px;
+    /* @media screen and (min-width: 1440px) {
+    } */
   }
 `;
 
 const DivLogoHome = styled(BaseDivLogoHome)`
   &.active-home {
     margin-right: auto;
+    position: relative;
   }
 `;
 
@@ -166,8 +221,10 @@ const Svg = styled(BaseSvg)`
 const B = styled(BaseB)`
   &.active-home {
     position: absolute;
-    left: 160px;
+    left: 152px;
     top: 90px;
+    align-items: center;
+    margin: 0;
   }
   /* margin-right: 40px; */
 `;
@@ -175,10 +232,29 @@ const P = styled(BaseP)`
   &.active-home {
     position: absolute;
     left: 140px;
-    top: 50px;
+    top: 60px;
+    align-items: center;
+    margin: 0;
   }
 
   /* margin-right: 40px; */
+`;
+
+const DivLogout = styled(BaseDivLogout)`
+  /* top: 12px;
+  
+  left: 405px; */
+  &.active-home {
+    position: absolute;
+    display: flex;
+
+    align-items: center;
+    margin: 0;
+    top: 12px;
+    right: 5px;
+    @media screen and (min-width: 1440px) {
+    }
+  }
 `;
 
 const Layout = () => {
@@ -218,16 +294,24 @@ const Layout = () => {
               </Svg>
 
               {!isActiveHome && <StyledLink to="/">Home</StyledLink>}
+
+              {isAuth && <StyledLink to="/contacts">Contacts</StyledLink>}
             </DivLogoHome>
             <Ul className={isActiveHome ? "active-home" : ""}>
-              <li>
-                {isAuth && <StyledLink to="/contacts">Contacts</StyledLink>}
-              </li>
-
               <li className={css.itemRegister}>
-                {/* <StyledLink to="/register">Registration</StyledLink> */}
+                {/* <StyledLinkReg
+                  to="/register"
+                  className={isActiveHome ? "active-home" : ""}
+                >
+                  Registration
+                </StyledLinkReg> */}
                 {!isAuth && (
-                  <StyledLink to="/register">Registration</StyledLink>
+                  <StyledLinkReg
+                    to="/register"
+                    className={isActiveHome ? "active-home" : ""}
+                  >
+                    Registration
+                  </StyledLinkReg>
                 )}
               </li>
 
@@ -242,43 +326,58 @@ const Layout = () => {
                 )}
                 {isAuth && user && (
                   <P className={isActiveHome ? "active-home" : css.textLayout}>
-                    {" "}
                     {user.email}
                   </P>
                 )}
               </li>
 
               <li>
-                <div className={css.divLogout}>
+                <DivLogout
+                  className={isActiveHome ? "active-home" : css.divLogout}
+                >
                   {isAuth && <div className={css.circle}> </div>}
 
                   {!isAuth ? (
-                    <StyledLink
+                    <StyledLinkLogin
                       to="/login"
                       onClick={handleClick}
                       className={css.logout}
+                      style={{
+                        // padding: 0,
+                        margin: 0,
+                      }}
                     >
                       {isAuth ? "Login Out" : "Login"}
-                    </StyledLink>
+                    </StyledLinkLogin>
                   ) : (
                     <ThemeProvider theme={theme}>
                       <Button
+                        className={
+                          isActiveHome ? "active-home" : css.logoutButton
+                        }
                         to="/login"
                         onClick={handleClick}
-                        className={css.logoutButton}
+                        // className={css.logoutButton}
                         variant="contained"
                         sx={{
                           m: 1,
-                          width: "120px",
+                          margin: 0,
+                          width: "80px",
                           backgroundColor: "rgb(211, 223, 226)",
                           color: "black",
+                          paddingTop: 1.25,
+                          paddingBottom: 1.25,
+                          paddingLeft: 0.5,
+                          paddingRight: 0.5,
+                          textTransform: "capitalize",
+                          lineHeight: 1,
                         }}
                       >
                         {isAuth ? "Login Out" : "Login"}
                       </Button>
                     </ThemeProvider>
                   )}
-                </div>
+                </DivLogout>
               </li>
             </Ul>
           </DivNav>
@@ -290,7 +389,12 @@ const Layout = () => {
           <Outlet />
           {isActiveHome && (
             <Start>
-              <StyledLink to="/contacts" style={{ color: "white" }}>
+              <StyledLink
+                to="/contacts"
+                style={{
+                  color: "white",
+                }}
+              >
                 Go!
               </StyledLink>
             </Start>

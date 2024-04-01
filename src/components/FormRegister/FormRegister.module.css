@@ -11,10 +11,10 @@
     border: 1px solid black;
         border-radius: 8px;
         padding-bottom: 20px;
-        width: 400px;
+        max-width: 400px;
         background-color: rgba(255, 255, 255, 0.7);
-        box-shadow: rgba(224, 217, 217, 0.2) 5px 3px 0px -1px,
-            rgba(158, 154, 154, 0.14) 5px 2px 0px 0px, rgba(95, 91, 91, 0.12) 5cqh 1px 0px 0px;
+        /* box-shadow: rgba(224, 217, 217, 0.2) 5px 3px 0px -1px,
+            rgba(158, 154, 154, 0.14) 5px 2px 0px 0px, rgba(95, 91, 91, 0.12) 5cqh 1px 0px 0px; */
         margin: 0 auto;
    
            
@@ -39,6 +39,7 @@
 .name {
     margin: 0;
     margin-bottom: 30px;
+    max-width: 350px;
 }
 
 .password {
@@ -66,5 +67,16 @@ margin: 0;
     background-position: center center;
     background-size: cover;
     background-image: var(--bd-gradient), url("https://ik.imagekit.io/sulimko/Phonebook/clipboard.png?updatedAt=1711225171247");
-    padding-top: 200px;
+        padding-top: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    .divLogin {
+        padding-top: 200px;
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .divLogin {}
 }

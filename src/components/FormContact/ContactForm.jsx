@@ -72,11 +72,12 @@ const ContactForm = () => {
         variant="contained"
         sx={{
           m: 1,
-          width: "400px",
+          // width: "400px",
           backgroundColor: "rgb(103, 103, 238)",
           margin: 0,
           marginTop: "30px",
           padding: "8px 0",
+          textTransform: "capitalize",
         }}
       >
         Add contact

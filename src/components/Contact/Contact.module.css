@@ -1,6 +1,6 @@
 .item{
     display: flex;
-    gap:20px;
+    gap:5px;
     align-items: center;
     list-style-type: circle;
     justify-content: space-between;
@@ -8,16 +8,48 @@
         border: 0.5px solid black;
         border-radius: 5px;
         margin-bottom: 5px;
-        padding: 3px 0;
+        padding: 3px 3px;
 }
+
+@media screen and (min-width: 768px) {
+    .item {
+
+        gap: 20px;
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .item {}
+}
+
+
 .btnClose{
-    
+     max-width: 50px; 
+    /* padding: 0; */
      /* margin: auto;
     padding: 5px 5px; */
     border-radius: 5px;
     border: 0.5px solid rgb(144, 144, 226);
     background-color: rgb(144, 144, 226);
 /* height: 25px; */
+    padding: 10px 8px;
+         line-height: 1;
+
+}
+
+@media screen and (min-width: 768px) {
+    .btnClose {
+        margin-bottom: 0;
+        width: 110px;
+        padding: 8px 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .btnClose {
+           
+    }
 }
 
 
@@ -27,28 +59,112 @@
 }
 
 h3{
+    font-size: 18px;
+    font-weight: 600;
+        font-style: normal;
 margin: 0;
 }
 .nameNumber {
+    justify-content: space-between;
+    align-items: center;
     display: flex;
-    gap: 20px;
-    width: 800px;
+    gap: 10px;
+   width: 800px;
     margin: 0;
-margin-left: 20px;
+margin-left: 2px;
     /* margin-right: 20px; */ 
    /* padding: 20px; */
 }
-.input {
-    width: 500px;
+
+@media screen and (min-width: 768px) {
+    .nameNumber {
     margin-left: 20px;
-    margin-right: 20px;
+    
+    }
+}
+
+@media screen and (min-width: 1440px) {
+.nameNumber {}
+}
+
+
+.input {
+    width: 295px;
+    padding-right: 3px;
+    padding-left: 3px;
     border: 0.5px solid rgb(144, 144, 226);
     height: 36px;
     border-radius: 5px;
     font-size: 18px;
 }
+@media screen and (min-width: 768px) {
+    .input {
+    width: 500px;
 
-.div_input{display: flex;}
+        
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .input {margin-left: 20px;
+    margin-right: 20px;}
+}
+
+
+
+
+
+.div_input{}
+@media screen and (min-width: 768px) {
+    .div_input{
+        display: flex;
+        flex-direction: column;
+        padding-left: 3px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .div_input{}
+}
 
 .div_button{display: flex;
-gap:30px;}
+    flex-direction: column;
+    gap:3px;
+ 
+}
+@media screen and (min-width: 768px) {
+    .div_button {
+        display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap:5px;
+
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .div_button { gap: 20px;
+        flex-direction: row;}
+}
+
+
+.MuiButtonBase-root, .MuiButton-root  {
+    padding: 8px 16px;
+
+
+}
+
+@media screen and (min-width: 768px) {
+.MuiButtonBase-root .MuiButton-root .css-zhl00c-MuiButtonBase-root-MuiButton-root{
+        padding: 8px 16px;
+
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .MuiButtonBase-root .MuiButton-root {
+        padding: 8px 16px;
+    }
+}

@@ -55,8 +55,7 @@ const FormLogin = ({ login }) => {
           Back to home
         </StyledLink>
 
-        <form onSubmit={handleSubmit}>
-          {/* <label>Email address</label> */}
+        <form onSubmit={handleSubmit} className={css.form}>
           <TextField
             className={css.email}
             type="email"
@@ -66,7 +65,18 @@ const FormLogin = ({ login }) => {
             variant="outlined"
             // helperText="Some important text"
             autoComplete="username"
-            sx={{ m: 1, width: "350px" }}
+            sx={{
+              m: 1,
+              width: "310px",
+              margin: "8px  1px",
+              "@media screen and (min-width: 768px)": {
+                width: "350px", // задаем другие паддинги для ширины больше 768px
+              },
+
+              "@media screen and (min-width: 1440px)": {
+                width: "350px",
+              },
+            }}
           />
 
           {/* <label>Password</label> */}
@@ -79,7 +89,18 @@ const FormLogin = ({ login }) => {
             variant="outlined"
             // helperText="Some important text"
             autoComplete="current-password"
-            sx={{ m: 1, width: "350px" }}
+            sx={{
+              m: 1,
+              width: "310px",
+              margin: "8px  1px",
+              "@media screen and (min-width: 768px)": {
+                width: "350px", // задаем другие паддинги для ширины больше 768px
+              },
+
+              "@media screen and (min-width: 1440px)": {
+                width: "350px",
+              },
+            }}
           />
 
           <div>
@@ -102,10 +123,19 @@ const FormLogin = ({ login }) => {
               variant="contained"
               sx={{
                 m: 1,
-                width: "350px",
+
                 margin: "0",
                 padding: "8px 0",
                 backgroundColor: "rgb(103, 103, 238)",
+                width: "310px",
+
+                "@media screen and (min-width: 768px)": {
+                  width: "350px", // задаем другие паддинги для ширины больше 768px
+                },
+
+                "@media screen and (min-width: 1440px)": {
+                  width: "350px",
+                },
               }}
             >
               LOGIN

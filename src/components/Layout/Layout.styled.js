@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-  margin: 0 auto;
-
-  font-family: 'Manrope', sans-serif;
-
-  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 5px;
   @media screen and (min-width: 768px) {
-    padding: 0px 5px;
+    margin: 0 auto;
+    padding-top: 16px;
+    font-family: 'Manrope', sans-serif;
+
+    width: 100%;
+    padding: 5px 5px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -19,16 +21,31 @@ const Header = styled.header`
 `;
 
 const DivNav = styled.div`
-  display: flex;
+  /* position: relative; */
+  /* display: flex; */
+  /* width: 580px; */
+  width: 350px;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    /* width: 350px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-top: 5px; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-right: 5px;
+  }
 `;
 
 const DivLogoHome = styled.div`
-  /* display: flex;
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  margin-right: auto; */
+  /* gap: 20px;
+  margin-right: auto;  */
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -50,6 +67,11 @@ const Svg = styled.svg`
 `;
 
 const Ul = styled.ul`
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: center;
+  padding-bottom: 5px;
+
   /* display: flex;
   justify-content: space-around;
   align-items: center;
@@ -59,43 +81,45 @@ const Ul = styled.ul`
   margin-top: 0;
   padding-right: 60px;
   margin-left: auto;  */
+  max-width: 400px;
 
   @media screen and (min-width: 768px) {
     display: flex;
+    padding-top: 5px;
     justify-content: space-around;
     align-items: center;
     /* margin-bottom: 16px; */
-    padding-left: 0;
+
+    padding-bottom: 0px;
+    padding-top: 0px;
     margin-bottom: 0;
     margin-top: 0;
-    padding-right: 5px;
+    margin: 0 0;
+    /* padding-right: 5px; */
     /* margin-left: auto; */
   }
 
   @media screen and (min-width: 1440px) {
-    display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* margin: 0 auto; */
     /* margin-bottom: 16px; */
-    padding-left: 0;
-    margin-bottom: 0;
-    margin-top: 0;
+
     /* padding-right: 5px; */
     /* margin-left: auto; */
   }
 `;
 const Start = styled.div`
-  position: absolute;
+  /* position: absolute; */
 
   /* top: 40%; */
-  left: 220px;
-  top: 540px;
+  /* left: 220px;
+  top: 540px; */
 
   color: white;
   background-color: rgb(103, 103, 238);
   /* padding-top: 8px;
   padding-bottom: 8px; */
-  padding: 20px 10px;
+  padding: 10px 10px;
   border-radius: 4px;
   text-decoration: none;
   /* color: black; */
@@ -104,7 +128,14 @@ const Start = styled.div`
   /* &.active {
     color: white;
     background-color: rgb(103, 103, 238);
+
+    
   } */
+
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
 `;
 const B = styled.b`
   font-weight: 500px;
@@ -112,17 +143,19 @@ const B = styled.b`
   font-weight: 500px;
   font-size: 18px;
   text-align: 'center';
+  margin: 0 auto;
   /* margin-left: 380px; */
   /* margin-right: 40px; */
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1440px) {
-    margin-left: 320px;
+    // margin-left: 320px;
   }
 `;
 const P = styled.p`
-  /* margin-right: 40px; */
+  margin: 0 auto;
+  text-align: 'center';
 
   @media screen and (min-width: 768px) {
   }
@@ -131,4 +164,18 @@ const P = styled.p`
   }
 `;
 
-export { Header, Start, Main, Ul, Svg, DivNav, DivLogoHome, B, P };
+const DivLogout = styled.div`
+  align-items: center;
+  display: flex;
+  right: 20px;
+  top: 16px;
+  @media screen and (min-width: 768px) {
+    right: 25px;
+    top: 8px;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+export { Header, Start, Main, Ul, Svg, DivNav, DivLogoHome, B, P, DivLogout };
