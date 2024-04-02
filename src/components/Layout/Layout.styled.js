@@ -21,9 +21,6 @@ const Header = styled.header`
 `;
 
 const DivNav = styled.div`
-  /* position: relative; */
-  /* display: flex; */
-  /* width: 580px; */
   width: 350px;
   align-items: center;
   justify-content: space-between;
@@ -72,15 +69,6 @@ const Ul = styled.ul`
   text-align: center;
   padding-bottom: 5px;
 
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* margin-bottom: 16px; */
-  /* padding-left: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-right: 60px;
-  margin-left: auto;  */
   max-width: 400px;
 
   @media screen and (min-width: 768px) {
@@ -95,42 +83,22 @@ const Ul = styled.ul`
     margin-bottom: 0;
     margin-top: 0;
     margin: 0 0;
-    /* padding-right: 5px; */
-    /* margin-left: auto; */
   }
 
   @media screen and (min-width: 1440px) {
     justify-content: space-around;
-    /* margin: 0 auto; */
-    /* margin-bottom: 16px; */
-
-    /* padding-right: 5px; */
-    /* margin-left: auto; */
   }
 `;
 const Start = styled.div`
-  /* position: absolute; */
-
-  /* top: 40%; */
-  /* left: 220px;
-  top: 540px; */
-
   color: white;
   background-color: rgb(103, 103, 238);
-  /* padding-top: 8px;
-  padding-bottom: 8px; */
+
   padding: 10px 10px;
   border-radius: 4px;
   text-decoration: none;
   /* color: black; */
   font-weight: 500;
   color: white;
-  /* &.active {
-    color: white;
-    background-color: rgb(103, 103, 238);
-
-    
-  } */
 
   width: 100px;
   margin: 0 auto;
@@ -144,8 +112,7 @@ const B = styled.b`
   font-size: 18px;
   text-align: 'center';
   margin: 0 auto;
-  /* margin-left: 380px; */
-  /* margin-right: 40px; */
+
   @media screen and (min-width: 768px) {
   }
 

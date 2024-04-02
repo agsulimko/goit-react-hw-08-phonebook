@@ -384,8 +384,6 @@ const Layout = () => {
         </Header>
 
         <Main className={isActiveHome ? "active-home" : ""}>
-          {/* <Suspense fallback={<div>{Loader()}</div>}> */}
-          {/* <Suspense fallback={<div>Laoding...</div>}> */}
           <Outlet />
           {isActiveHome && (
             <Start>
