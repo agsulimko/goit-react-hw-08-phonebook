@@ -11,12 +11,12 @@ margin-top: 0;
 }
 .p{
 color:rgb(246, 244, 250);
-/* text-align: center; */
+ text-align: center; 
 /* width: 800px; */
 margin: 0 auto;
-padding-left: 30px;
-padding-right: 30px;
-min-width:459px;
+padding-left: 10px;
+padding-right: 10px;
+min-width:370px;
 }
 /* .h{
     text-align: center;

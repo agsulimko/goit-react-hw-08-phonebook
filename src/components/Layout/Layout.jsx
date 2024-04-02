@@ -66,7 +66,7 @@ const StyledLinkReg = styled(NavLink)`
   }
   &.active-home {
     padding: 0;
-    right: 70px;
+    right: 180px;
     top: 20px;
   }
 `;
@@ -130,7 +130,7 @@ const Main = styled(BaseMain)`
     /* position: relative; */
     background-color: rgba(129, 130, 133, 0.7);
     height: 90vh;
-    max-width: 500px;
+    max-width: 400px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
@@ -251,7 +251,7 @@ const DivLogout = styled(BaseDivLogout)`
     align-items: center;
     margin: 0;
     top: 12px;
-    right: 5px;
+    right: 102px;
     @media screen and (min-width: 1440px) {
     }
   }
