@@ -5,13 +5,21 @@ import Button from "@mui/material/Button";
 import { deleteContacts, editContacts } from "redux/contacts/operations";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-// import { Button as BaseButton } from "../Contact/Contact.styled.js";
 
-// const Button = styled(BaseButton)``;
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { deepPurple, purple } from "@mui/material/colors";
+const theme = createTheme({
+  palette: {
+    primary: deepPurple,
+    secondary: purple,
+  },
+});
 
 const Contact = ({ contacts }) => {
   const dispatch = useDispatch();
   const [isEditMode, setIsEditMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+
   const [name, setName] = useState(contacts.name || "");
   const [number, setNumber] = useState(contacts.number || "");
 
@@ -21,6 +29,7 @@ const Contact = ({ contacts }) => {
   const handleDelete = () => {
     dispatch(deleteContacts(contacts?.id));
     toast.success("Successfully deleted a contact!", { duration: 1500 });
+    closeMenu(); // Close the menu after deleting
   };
 
   useEffect(() => {
@@ -38,6 +47,10 @@ const Contact = ({ contacts }) => {
     } else if (target.name === "editNumber") {
       setNumber(target.value);
     }
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -97,11 +110,11 @@ const Contact = ({ contacts }) => {
         >
           {isEditMode ? "Save" : "Edit"}
         </Button>
-        <Button
+        {/* <Button
           type="button"
           variant="contained"
           className={css.btnClose}
-          aria-label="Close"
+          aria-label="Delete"
           onClick={handleDelete}
           sx={{
             m: 1,
@@ -120,7 +133,90 @@ const Contact = ({ contacts }) => {
           }}
         >
           Delete
+        </Button> */}
+
+        <Button
+          type="button"
+          variant="contained"
+          className={css.btnClose}
+          aria-label="Menu"
+          onClick={() => setIsMenuOpen(true)}
+          sx={{
+            m: 1,
+            // width: "110px",
+            margin: 0,
+            backgroundColor: "rgb(103, 103, 238)",
+            textTransform: "capitalize",
+            lineHeight: 1,
+            "@media screen and (min-width: 768px)": {
+              padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
+            },
+            "@media screen and (min-width: 1440px)": {
+              padding: "8px 40px",
+            },
+            // padding: "8px 0",
+          }}
+        >
+          Delete
         </Button>
+        {/* Menu with delete and cancel buttons */}
+
+        <ThemeProvider theme={theme}>
+          {isMenuOpen && (
+            <div className={css.menu}>
+              <Button
+                type="button"
+                variant="contained"
+                // className={css.btnDelete}
+
+                className={css.btnClose}
+                aria-label="Menu"
+                onClick={handleDelete}
+                sx={{
+                  m: 1,
+                  // width: "110px",
+                  margin: 0,
+                  backgroundColor: "rgb(103, 103, 238)",
+                  textTransform: "capitalize",
+                  lineHeight: 1,
+                  "@media screen and (min-width: 768px)": {
+                    padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
+                  },
+                  "@media screen and (min-width: 1440px)": {
+                    padding: "8px 40px",
+                  },
+                  // padding: "8px 0",
+                }}
+              >
+                Delete
+              </Button>
+              <Button
+                type="button"
+                variant="contained"
+                // className={css.btnCancel}
+                className={css.btnClose}
+                onClick={closeMenu}
+                sx={{
+                  m: 1,
+                  // width: "110px",
+                  margin: 0,
+                  backgroundColor: "rgb(103, 103, 238)",
+                  textTransform: "capitalize",
+                  lineHeight: 1,
+                  "@media screen and (min-width: 768px)": {
+                    padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
+                  },
+                  "@media screen and (min-width: 1440px)": {
+                    padding: "8px 40px",
+                  },
+                  // padding: "8px 0",
+                }}
+              >
+                Cancel
+              </Button>
+            </div>
+          )}
+        </ThemeProvider>
       </div>
     </li>
   );

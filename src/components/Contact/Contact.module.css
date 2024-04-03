@@ -130,7 +130,7 @@ margin-left: 2px;
 .div_button{display: flex;
     flex-direction: column;
     gap:3px;
- 
+ position: relative;
 }
 @media screen and (min-width: 768px) {
     .div_button {
@@ -166,5 +166,34 @@ margin-left: 2px;
 @media screen and (min-width: 1440px) {
     .MuiButtonBase-root .MuiButton-root {
         padding: 8px 16px;
+    }
+}
+
+
+.menu{
+    display: flex;
+    gap:3px;
+    position: absolute;
+    /* top: 564px;
+    right: 3px; */
+    flex-direction: column;
+    /* top:50%;
+    right: 50%; */
+}
+@media screen and (min-width: 768px) {
+.menu{display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
+      
+
+
+    }
+}
+
+@media screen and (min-width: 1440px) {
+.menu {
+    gap: 20px;
+        flex-direction: row;
     }
 }

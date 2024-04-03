@@ -166,6 +166,7 @@ const Header = styled(BaseHeader)`
   }
   &.active-home {
     padding-bottom: 0;
+    /* width: 380px; */
     width: 470px;
     position: absolute;
     padding-left: 0;

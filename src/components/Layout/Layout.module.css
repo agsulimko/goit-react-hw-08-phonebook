@@ -71,24 +71,15 @@ display: flex;
 
 
 
-    /* .circle {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            margin-right: 10px;
-          
-            background-color: rgb(16, 211, 104);
-           
-    
-        } */
-                .circle {
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    border: 0.5px solid gray;
-                    margin-right: 10px;
-                    background-color: rgb(16, 211, 104);
-                    animation: blink 1s infinite alternate;
+  
+    .circle {
+     width: 15px;
+     height: 15px;
+    border-radius: 50%;
+  border: 0.5px solid gray;
+margin-right: 10px;
+background-color: rgb(16, 211, 104);
+ animation: blink 1s infinite alternate;
                     /* Blinking animation */
                 }
         
