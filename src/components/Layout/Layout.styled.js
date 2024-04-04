@@ -15,7 +15,6 @@ const Header = styled.header`
   @media screen and (min-width: 1440px) {
     margin: 0 auto;
 
-    /* padding: 0px 30px; */
     width: 100%;
   }
 `;
