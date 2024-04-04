@@ -89,7 +89,9 @@ const Contact = ({ contacts }) => {
           onClick={handlEdit}
           type="button"
           variant="contained"
+          aria-label="Save Edit"
           className={css.btnClose}
+          // className={css.btnSaveEdit}
           sx={{
             m: 1,
             // width: "110px",

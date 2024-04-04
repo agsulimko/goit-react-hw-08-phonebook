@@ -57,6 +57,53 @@
     background-color:rgb(21, 104, 8);
 }
 
+
+/* .btnSaveEdit {
+    max-width: 50px;
+
+    border-radius: 5px;
+    border: 0.5px solid rgb(144, 144, 226);
+    background-color: rgb(144, 144, 226);
+
+    padding: 10px 8px;
+    line-height: 1;
+
+}
+
+@media screen and (min-width: 768px) {
+    .btnSaveEdit {
+        margin-bottom: 0;
+        width: 110px;
+        padding: 8px 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .btnSaveEdit {}
+}
+
+
+
+.btnSaveEdit:focus {
+     background-color: rgb(103, 103, 238); 
+     background-color: rgb(21, 104, 8); 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 h3{
     font-size: 18px;
     font-weight: 600;
@@ -88,7 +135,7 @@ margin-left: 2px;
 
 
 .input {
-    width: 295px;
+     width: 236px; 
     padding-right: 3px;
     padding-left: 3px;
     border: 0.5px solid rgb(144, 144, 226);
