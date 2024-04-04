@@ -167,6 +167,7 @@ const Contact = ({ contacts }) => {
               <Button
                 type="button"
                 variant="contained"
+                color="error"
                 // className={css.btnDelete}
 
                 className={css.btnClose}
@@ -176,7 +177,8 @@ const Contact = ({ contacts }) => {
                   m: 1,
                   // width: "110px",
                   margin: 0,
-                  backgroundColor: "rgb(103, 103, 238)",
+                  backgroundColor: "rgb(238, 43, 43)",
+
                   textTransform: "capitalize",
                   lineHeight: 1,
                   "@media screen and (min-width: 768px)": {
@@ -185,7 +187,6 @@ const Contact = ({ contacts }) => {
                   "@media screen and (min-width: 1440px)": {
                     padding: "8px 40px",
                   },
-                  // padding: "8px 0",
                 }}
               >
                 Delete
@@ -200,7 +201,9 @@ const Contact = ({ contacts }) => {
                   m: 1,
                   // width: "110px",
                   margin: 0,
-                  backgroundColor: "rgb(103, 103, 238)",
+
+                  backgroundColor:
+                    "hsl(124.00000000000001, 93.74999999999999%, 18.823529411764707%)",
                   textTransform: "capitalize",
                   lineHeight: 1,
                   "@media screen and (min-width: 768px)": {
