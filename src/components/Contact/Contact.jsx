@@ -200,7 +200,7 @@ const Contact = ({ contacts }) => {
                 onClick={closeMenu}
                 sx={{
                   m: 1,
-                  // width: "110px",
+
                   margin: 0,
 
                   backgroundColor: "rgb(21, 104, 8)",
