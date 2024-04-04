@@ -55,7 +55,8 @@
 
 
 .btnClose:focus {
-    background-color: rgb(103, 103, 238);
+    /* background-color: rgb(103, 103, 238); */
+    background-color:rgb(21, 104, 8);
 }
 
 h3{

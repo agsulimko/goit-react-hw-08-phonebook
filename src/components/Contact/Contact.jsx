@@ -194,6 +194,7 @@ const Contact = ({ contacts }) => {
               <Button
                 type="button"
                 variant="contained"
+                color="success"
                 // className={css.btnCancel}
                 className={css.btnClose}
                 onClick={closeMenu}
@@ -202,8 +203,7 @@ const Contact = ({ contacts }) => {
                   // width: "110px",
                   margin: 0,
 
-                  backgroundColor:
-                    "hsl(124.00000000000001, 93.74999999999999%, 18.823529411764707%)",
+                  backgroundColor: "rgb(21, 104, 8)",
                   textTransform: "capitalize",
                   lineHeight: 1,
                   "@media screen and (min-width: 768px)": {
