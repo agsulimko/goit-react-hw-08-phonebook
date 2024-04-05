@@ -1,7 +1,6 @@
 import css from "./Home.module.css";
 const Contacts = () => {
   return (
-    // <main className={css.mainHome}>
     <section className={css.sectionContacts}>
       <div className={css.url}></div>
       <h1 className={css.h1}>Phonebook</h1>
