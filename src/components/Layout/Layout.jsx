@@ -2,7 +2,13 @@ import css from "./Layout.module.css";
 import styled from "styled-components";
 // import React, { useEffect } from "react";
 import { useEffect } from "react";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { selectAuth, selectUser } from "../../redux/auth/auchSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteToken } from "api/auth";
@@ -286,13 +292,15 @@ const Layout = () => {
         <Header className={isActiveHome ? "active-home" : ""}>
           <DivNav>
             <DivLogoHome className={isActiveHome ? "active-home" : ""}>
-              <Svg
-                className={isActiveHome ? "active-home" : ""}
-                width={24}
-                height={24}
-              >
-                <use href={`${sprite}#icon-phone-book`}></use>
-              </Svg>
+              <Link to="/">
+                <Svg
+                  className={isActiveHome ? "active-home" : ""}
+                  width={24}
+                  height={24}
+                >
+                  <use href={`${sprite}#icon-phone-book`}></use>
+                </Svg>
+              </Link>
 
               {!isActiveHome && <StyledLink to="/">Home</StyledLink>}
 
