@@ -14,8 +14,8 @@ import { Toaster } from "react-hot-toast";
 
 import Loader from "./Loader/Loader";
 import { refreshThunk } from "redux/auth/auchOperations";
-import { theme } from "../styles/theme-file"; // Import your theme object
-import { ThemeProvider } from "@mui/material/styles"; // Import ThemeProvider
+// import { theme } from "../styles/theme-file"; // Import your theme object
+// import { ThemeProvider } from "@mui/material/styles"; // Import ThemeProvider
 const Home = lazy(() => import("../pages/Home"));
 const Register = lazy(() => import("../pages/Register"));
 const Login = lazy(() => import("../pages/Login"));
@@ -33,7 +33,8 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      {/* <ThemeProvider theme={theme}> */}
       <Toaster />
 
       <Suspense fallback={<div>{Loader()}</div>}>
@@ -70,7 +71,9 @@ const App = () => {
           </Route>
         </Routes>
       </Suspense>
-    </ThemeProvider>
+
+      {/* </ThemeProvider> */}
+    </>
   );
 };
 
