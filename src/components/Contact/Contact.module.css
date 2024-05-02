@@ -125,12 +125,15 @@ margin-left: 2px;
 @media screen and (min-width: 768px) {
     .nameNumber {
     margin-left: 20px;
+    gap: 50px;
     
     }
 }
 
 @media screen and (min-width: 1440px) {
-.nameNumber {}
+.nameNumber {
+    gap: 100px;
+}
 }
 
 .nameAvatar {
@@ -166,6 +169,7 @@ margin-left: 2px;
 @media screen and (min-width: 768px) {
     .input {
     width: 500px;
+    width: 280px;
 
         
     }
@@ -173,24 +177,29 @@ margin-left: 2px;
 
 @media screen and (min-width: 1440px) {
     .input {margin-left: 20px;
-    margin-right: 20px;}
+    margin-right: 20px;width: 500px;}
 }
 
 
 
 
 
-.div_input{}
-@media screen and (min-width: 768px) {
-    .div_input{
-        display: flex;
+.div_input{
+    display: flex;
         flex-direction: column;
         padding-left: 3px;
+}
+@media screen and (min-width: 768px) {
+    .div_input{flex-direction: row;
+            
+        
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .div_input{}
+    .div_input{
+        
+    }
 }
 
 .div_button{display: flex;
