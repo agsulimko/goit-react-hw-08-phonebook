@@ -27,7 +27,8 @@ const DivNav = styled.div`
     /* width: 350px; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
     /* padding-top: 5px; */
   }
 

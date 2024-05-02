@@ -57,6 +57,9 @@ const Contact = ({ contacts }) => {
     <li className={css.item}>
       {!isEditMode ? (
         <div className={css.nameNumber}>
+          <div className={css.nameAvatar}>
+            <p> {contacts.name.slice(0, 1).toUpperCase()}</p>
+          </div>
           <h3 className={css.name}>{contacts.name}</h3>
           <h3 className={css.number}>{contacts.number}</h3>
         </div>
@@ -112,30 +115,6 @@ const Contact = ({ contacts }) => {
         >
           {isEditMode ? "Save" : "Edit"}
         </Button>
-        {/* <Button
-          type="button"
-          variant="contained"
-          className={css.btnClose}
-          aria-label="Delete"
-          onClick={handleDelete}
-          sx={{
-            m: 1,
-            // width: "110px",
-            margin: 0,
-            backgroundColor: "rgb(103, 103, 238)",
-            textTransform: "capitalize",
-            lineHeight: 1,
-            "@media screen and (min-width: 768px)": {
-              padding: "8px 16px", // задаем другие паддинги для ширины больше 768px
-            },
-            "@media screen and (min-width: 1440px)": {
-              padding: "8px 40px",
-            },
-            // padding: "8px 0",
-          }}
-        >
-          Delete
-        </Button> */}
 
         <Button
           type="button"

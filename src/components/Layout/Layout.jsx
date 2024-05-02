@@ -178,6 +178,7 @@ const Header = styled(BaseHeader)`
     padding-left: 0;
     padding-right: 0;
     margin-left: 18px;
+    padding-top: 12px;
     /* margin-left: 30px; */
     /* margin-right: 14px; */
     /* background-repeat: no-repeat;
@@ -191,6 +192,9 @@ const Header = styled(BaseHeader)`
     height: 100vh;
     width: 300px; */
     z-index: 1;
+    @media screen and (min-width: 768px) {
+      padding-top: 8px;
+    }
   }
 `;
 const DivNav = styled(BaseDivNav)`
@@ -228,7 +232,7 @@ const Svg = styled(BaseSvg)`
 const B = styled(BaseB)`
   &.active-home {
     position: absolute;
-    left: 152px;
+    left: 115px;
     top: 90px;
     align-items: center;
     margin: 0;
@@ -238,7 +242,7 @@ const B = styled(BaseB)`
 const P = styled(BaseP)`
   &.active-home {
     position: absolute;
-    left: 140px;
+    left: 100px;
     top: 60px;
     align-items: center;
     margin: 0;
